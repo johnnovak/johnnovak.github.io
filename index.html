@@ -8,46 +8,212 @@
 
   <title>johnnovak.net</title>
 
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300" />
-  <style>
-      html {
-          overflow: hidden;
-      }
-      body {
-          font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
-          text-transform: uppercase;
-          text-align: center;
-          background: #eee;
-      }
-      h1 {
-          font-weight: 300;
-          font-size: 55px;
-          letter-spacing: 0.1em;
-          color: #ed0000;
-      }
-      h2 {
-          font-weight: 300;
-          font-size: 32px;
-          letter-spacing: 0.3em;
-          color: #666;
-      }
-      #wrapper {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          height: 350px;
-          width: 100%;
-      }
-  </style>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" />
+
+  <link rel="stylesheet" type="text/css" href="/home/css/home.css" />
+  <script type="text/javascript">
+    var isDesktop =    window.orientation === undefined
+                    || window.devicePixelRatio === undefined
+                    || window.screenX !== 0
+                    || document.documentElement.clientWidth !== screen.width;
+
+    var ua = navigator.userAgent;
+    var isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
+    if (isMobileWebkit) {
+      isDesktop = false;
+    }
+    if (isDesktop) {
+      document.write('<link rel="stylesheet" type="text/css" href="/home/css/home-js.css" />');
+    }
+  </script>
 </head>
 
 <body>
+  <script src="/js/lib/respond.js"></script>
+
   <div id="wrapper">
-    <h1>johnnovak.net</h1>
-    <h2>Coming Soon<h2>
+  <script type="text/javascript">
+    if (isDesktop) {
+      document.getElementById('wrapper').style.display = "none";
+    }
+  </script>
+
+  <div id="header">
+    <a href="/"><img id="jn-logo" src="/img/jn-logo@2x.png" alt="John Novak" /></a>
+  </div>
+
+  <ul id="mainmenu">
+    <li><a id="menu-about" href="#">About</a></li>
+    <li><a id="menu-music" href="#music">Music</a></li>
+    <li><a id="menu-photo" href="#photo">Photo</a></li>
+    <li><a id="menu-code" href="#code">Code</a></li>
+  </ul>
+
+  <!-- ******* ABOUT ******* -->
+
+  <div id="about-section">
+    <div id="about-bg" data-stellar-ratio="-1.3"></div>
+
+    <a class="anchor" id="about"></a>
+    <h1>About</h1>
+
+    <div class="section-content">
+      <ul class="info">
+        <li>Male, 34</li>
+        <li>Software Engineer / Digital Artist</li>
+        <li>Brisbane, Australia</li>
+      </ul>
+
+      <h2>Interests</h2>
+      <ul class="interests">
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Drawing</a></li>
+        <li><a href="http://nodebox.net/">Generative</a> <a href="http://www.opengl.org/">Art</a></li>
+
+        <li><a href="http://schemers.org/">Programming</a> <a href="http://clojure.org/">Languages</a></li>
+        <li><a href="http://www.kahvi.org/">Music</a></li>
+        <li><a href="http://avhguitarrepair.com/the-meshuggah-guitar-archive/the-meshuggah-guitarchive-8-string-guitars/">Guitars</a></li>
+        <li><a href="http://www.philipkdickfans.com/">Sci</a><a href="http://english.lem.pl/">-</a><a href="http://www.williamgibsonbooks.com/">fi</a></li>
+        <li><a href="http://www.soundonsound.com/">Audio</a> <a href="http://www.gearslutz.com/">Engineering</a></li>
+        <li><a href="http://www.hvsc.c64.org/">Sid</a> <a href="http://remix.kwed.org/">Tunes</a></li>
+
+        <li><a href="http://en.wikipedia.org/wiki/Amiga_500">Amiga</a> <a href="http://oldcomputers.net/amiga500.html">&</a> <a href="http://www.lemon64.com/">C64</a></li>
+        <li><a href="http://www.pouet.net/">Demoscene</a></li>
+        <li><a href="http://www.adventureclassicgaming.com/">Adventure</a> <a href="http://scummvm.org/">Games</a></li>
+        <li><a href="#">Books</a></li>
+        <li><a href="http://davidlynch.com/">Movies</a></li>
+        <li><a href="http://thanuka.com/">Illustrations</a></li>
+
+        <li><a href="http://www.michaelkenna.net/">Photography</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Carl_Jung">Psychology</a></li>
+        <li><a href="http://mnmlist.com/less/">Minimalism</a></li>
+        <li><a href="#">Surrealism</a></li>
+        <li><a href="#">Travel</a></li>
+        <li><a href="#">Nature</a></li>
+        <li><a href="http://sheldonbrown.com/">Cycling</a></li>
+        <li><a href="#">DIY</a></li>
+        <li><a href="http://www.vipassanadhura.com/">Consciousness</a></li>
+      </ul>
+
+      <h2>Contact</h2>
+      <a class="contact" href="mailto:contact@johnnovak.net">contact@johnnovak.net</a>
+    </div>
+  </div>
+
+  <!-- ******* MUSIC ******* -->
+
+  <div id="music-section">
+    <div id="music-bg" data-stellar-ratio="1.3"></div>
+
+    <a class="anchor" id="music"></a>
+    <h1>Music</h1>
+
+    <div class="section-content">
+      <h2>Albums</h2>
+      <ul>
+        <li><a href="http://www.jamendo.com/en/list/a131643/when-the-abyss-stares-back">When the Abyss Stares Back</a></li>
+      </ul>
+
+      <h2>EP<span class="lower">s</span> / Singles </h2>
+      <ul>
+        <li><a href="http://www.jamendo.com/en/list/a131662/array-of-sunbeams-over-a-perfectly-aligned-molecular-grid-struct">Array of Sunbeams</a></li>
+        <li><a href="http://www.jamendo.com/en/list/a131685/balance-game-soundtrack">Balance Game Soundtrack</a></li>
+      </ul>
+
+      <div class="oldstuff">
+        <h2>Old Stuff</h2>
+        <p>As elijah/Majic 12</p>
+        <ul>
+          <li><a href="https://soundcloud.com/elijah-xm1">Soundcloud</a></li>
+          <li><a href="http://www.exotica.org.uk/mediawiki/index.php?title=Special%3AModland&ss=1&amp;title=Special%3AModland&amp;md=aut&amp;id=3134">Modland <span class="formats">MOD / XM / MP3 / OGG</a></span></li>
+          <li><a href="http://modarchive.org/index.php?request=view_artist_modules&amp;query=82371">The Mod Archive <span class="formats">MOD / XM</span></a></li>
+          <li><a href="http://amp.dascene.net/detail.php?detail=modules&amp;view=2430">Amiga Music Preservation (AMP) <span class="formats">MOD / XM</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="sidebar">
+      <li><a href="http://www.jamendo.com/en/artist/439928/john-novak">Jamendo</a></li>
+      <li><a href="https://soundcloud.com/john-novak-music">Soundcloud</a></li>
+    </ul>
+  </div>
+
+  <!-- ******* PHOTO ******* -->
+
+  <div id="photo-section">
+    <div id="photo-bg-leg1" data-stellar-ratio="1.4"></div>
+    <div id="photo-bg-leg2" data-stellar-ratio="1.8"></div>
+    <div id="photo-bg-skull" data-stellar-ratio="1.2"></div>
+
+    <a class="anchor" id="photo"></a>
+    <h1>Photo</h1>
+
+    <div class="photos">
+      <a href="/photo/mannequins/in-the-light/#the-miraculous-miss-anderson"><img class="photo1" src="/home/img/photo1.jpg" alt="The Miraculous Miss Anderson &mdash; Sydney, Australia, 2011" /></a>
+      <a href="/photo/mannequins/sisters/#blue-velvet"><img class="photo2" src="/home/img/photo2.jpg" alt="Blue Velvet &mdash; Brisbane, Australia, 2011" /></a>
+      <a href="/photo/urban/hungary/#freezing-point"><img class="photo3" src="/home/img/photo3.jpg" alt="Freezing Point &mdash; Budapest, Hungary, 2007" /></a>
+      <a href="/photo/urban/singapore/#paperback-dawn"><img class="photo4" src="/home/img/photo4.jpg" alt="Paperback Dawn &mdash; Singapore, 2012" /></a>
+      <a href="/photo/urban/australia/#acrylic-sundown"><img class="photo5" src="/home/img/photo5.jpg" alt="Acrylic Sundown &mdash; Brisbane, Australia, 2011" /></a>
+      <a href="/photo/mannequins/made-of-porcelain/#petra-porcelain-3"><img class="photo6" src="/home/img/photo6.jpg" alt="Petra Porcelain #3 &mdash; Noosa Heads, Australia, 2011" /></a>
+      <a href="/photo/mannequins/in-the-dark/#flora-five"><img class="photo7" src="/home/img/photo7.jpg" alt="Flora Five &mdash; Sydney, Australia, 2011" /></a>
+      <a href="/photo/mannequins/in-the-light/#bo-bride"><img class="photo8" src="/home/img/photo8.jpg" alt="Bo Bride &mdash; Brisbane, Australia, 2011" /></a>
+      <a href="/photo/people/niniel/#nienor-niniel"><img class="photo9" src="/home/img/photo9.jpg" alt="Nienor Niniel &mdash; Budapest, Hungary, 2007" /></a>
+      <a href="/photo/mannequins/sisters/#albino-twins"><img class="photo10" src="/home/img/photo10.jpg" alt="Albino Twins &mdash; Reading, UK, 2008" /></a>
+      <a href="/photo/bw/romania/#angels"><img class="photo11" src="/home/img/photo11.jpg" alt="Angels &mdash; Nagyvárad, Romania, 2004" /></a>
+      <a href="/photo/bw/hungary/#before-storm"><img class="photo12" src="/home/img/photo12.jpg" alt="Before Storm &mdash; Lake Velencei, Hungary, 2005" /></a>
+    </div>
+
+    <div class="photo-spacer1"></div>
+    <div class="photo-spacer2"></div>
+
+    <ul class="sidebar">
+      <li class="gallery"><a href="/photo/">Gallery <span>&rarr;</span></a></li>
+      <li><a href="http://society6.com/JohnNovak/">Society6</a></li>
+    </ul>
+  </div>
+
+  <!-- ******* CODE ******* -->
+
+  <div id="code-section">
+    <div id="code-bg" data-stellar-ratio="1.7"></div>
+
+    <a class="anchor" id="code"></a>
+    <h1>Code</h1>
+
+    <div class="section-content">
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="http://github.com/johnnovak/twyg">twyg &mdash; Python tree visualisation</a></li>
+      </ul>
+    </div>
+
+    <ul class="sidebar">
+      <li><a href="http://github.com/johnnovak/">GitHub</a></li>
+    </ul>
+  </div>
+
+  <!-- ******* FOOTER ******* -->
+
+  <div id="footer-section">
+    <div id="footer-bg-building" data-stellar-ratio="1.3"></div>
+    <div id="footer-bg-gate" data-stellar-ratio="1.9"></div>
+    <div id="footer-bg-sun" data-stellar-ratio="1.4"></div>
+    <div id="footer-bg">
+      <p class="github">Powered by <a href="http://github.com/">GitHub</a></p>
+    </div>
+  </div>
+
+  <script src="/js/lib/jquery-1.11.0.min.js"></script>
+  <script src="/home/js/lib/jquery.stellar.js"></script>
+  <script src="/home/js/lib/jquery.mousewheel.js"></script>
+
+  <script type="text/javascript">
+    if (isDesktop) {
+      document.write('<script src="/home/js/home.js"></scr'+'ipt>');
+    }
+  </script>
+
   </div>
 </body>
-
+</html>
