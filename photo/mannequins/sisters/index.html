@@ -11,25 +11,23 @@
   <link rel="stylesheet" type="text/css" href="/photo/css/fotorama.css">
   <link rel="stylesheet" type="text/css" href="/photo/css/photo.css" />
 
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script>
     if (!window.jQuery) {
-      document.write('<script src="/js/lib/jquery-1.11.0.min.js"><\/script>');
+      document.write('<script src="/js/lib/jquery-1.11.1.min.js"><\/script>');
     }
   </script>
   <script src="/photo/js/lib/fotorama.js"></script>
-  <script src="/photo/js/lib/EventEmitter.min.js"></script>
-  <script src="/photo/js/lib/eventie.js"></script>
-  <script src="/photo/js/lib/imagesloaded.js"></script>
+  <script src="/photo/js/lib/imagesloaded.pkgd.min.js"></script>
   <script src="/photo/js/photo.js"></script>
 </head> 
 
 <body class="photo">
-  <script src="/js/lib/respond.js"></script>
+  <script src="/js/lib/respond.min.js"></script>
   <script>document.body.className += ' js';</script>
 
   <div id="header">
-      <h1><a href="/photo/">John Novak <span>Photography</span></a></h1>
+    <h1><a href="http://www.johnnovak.net/">John Novak</a> <a class="photo" href="/photo/">Photography</a></h1>
 
     <div class="menu">
       <ul class="categories">
@@ -105,6 +103,7 @@
       <a href="#shadow"><h2>Shadow &mdash; Sydney, Australia, 2011</h2></a>
     </div>
 
+    <div id="caption"></div>
     <div id="nav"></div>
 </div>
 
