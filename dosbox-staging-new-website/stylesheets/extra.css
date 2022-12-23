@@ -116,33 +116,42 @@ body {
 }
 
 /* Admonitions */
-.md-typeset .admonition {
+.md-typeset .admonition,
+.md-typeset details {
   font-size: 90%;
   border: none;
   box-shadow: none;
 }
 
-.md-typeset .admonition.note {
-  background: #448aff20;
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  background: #448aff1a;
 }
-.md-typeset .admonition.note .admonition-title {
-  background: #448aff30;
+.md-typeset .admonition.note .admonition-title,
+.md-typeset details.note summary {
+  background: #448aff30 !important;
 }
 
 .md-typeset .admonition.important,
-.md-typeset .admonition.tip {
-  background: #00bfa520;
+.md-typeset details.important,
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  background: #00bfa51a;
 }
 .md-typeset .admonition.important .admonition-title,
-.md-typeset .admonition.tip .admonition-title {
-  background: #00bfa530;
+.md-typeset details.important summary,
+.md-typeset .admonition.tip .admonition-title,
+.md-typeset details.tip summary {
+  background: #00bfa530 !important;
 }
 
-.md-typeset .admonition.warning {
-  background: #ff910020;
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  background: #ff91001a;
 }
-.md-typeset .admonition.warning .admonition-title {
-  background: #ff910030;
+.md-typeset .admonition.warning .admonition-title,
+.md-typeset details.warning summary {
+  background: #ff910030 !important;
 }
 
 /* Tables */
