@@ -154,6 +154,51 @@ body {
   background: #ff910030 !important;
 }
 
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  background: #00b07022;
+}
+.md-typeset .admonition.question .admonition-title,
+.md-typeset details.question summary {
+  background: #00b07042 !important;
+}
+.md-typeset :-webkit-any(.question,.help,.faq)>:-webkit-any(.admonition-title,summary):before{
+  background-color:#00b070;
+}
+.md-typeset :-moz-any(.question,.help,.faq)>:-moz-any(.admonition-title,summary):before{
+  background-color:#00b070;
+}
+.md-typeset :is(.question,.help,.faq)>:is(.admonition-title, summary):before{
+  background-color:#00b070;
+}
+
+.md-typeset .admonition.quote,
+.md-typeset details.quote {
+  background: #9e9e9e20;
+}
+.md-typeset .admonition.quote .admonition-title,
+.md-typeset details.quote summary {
+  background: #9e9e9e40 !important;
+}
+
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  background: #3c10f01a;
+}
+.md-typeset .admonition.example .admonition-title,
+.md-typeset details.example summary {
+  background: #3c10f030 !important;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  background: #f0173422;
+}
+.md-typeset .admonition.danger .admonition-title,
+.md-typeset details.danger summary {
+  background: #f0173434 !important;
+}
+
 /* Tables */
 .md-typeset table:not([class]){
   font-size: 0.78rem;
