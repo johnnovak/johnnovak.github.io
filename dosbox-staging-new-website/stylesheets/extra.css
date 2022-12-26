@@ -356,12 +356,9 @@ figcaption {
   font-style: normal;
   font-weight: bold;
 }
-.front-page .header svg {
-  height: 3.6rem;
-}
 
 .front-page .header .download {
-  width: 20rem;
+  max-width: 20rem;
   margin-top: 2.0rem;
   margin: 2.0rem auto 0 auto;
   background: #eee;
@@ -389,9 +386,10 @@ figcaption {
 }
 .front-page .header a.platform svg {
   fill: currentcolor;
+  height: 2.7rem;
 }
 .front-page .header a.platform p {
-  margin: 0.17rem 0;;
+  margin: 0.17rem 0;
   padding: 0 0 0.5rem 0;
   font-size: 0.9rem;
   font-weight: 600;
@@ -467,6 +465,11 @@ figcaption {
 }
 
 @media screen and (min-width: 45em) {
+  @media screen and (min-width: 25em) {
+    .front-page .header a.platform svg {
+      height: 3.6rem;
+    }
+  }
   .front-page .features-grid {
     display: flex;
     flex-wrap: wrap;
