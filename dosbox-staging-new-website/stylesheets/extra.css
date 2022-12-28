@@ -278,6 +278,25 @@ img.linux-badge {
 }
 */
 
+/* Footer */
+.md-footer-meta {
+  font-size: .76rem;
+}
+.md-footer-meta .links ul {
+  list-style: none;
+  margin: 0.7rem 0 0 0.7rem;
+}
+.md-footer-meta .links ul li {
+  display: inline;
+  padding: 0;
+  margin: 0 1.1rem 0 0;
+}
+.md-footer-meta .credits {
+  color: #666;
+  font-size: .68rem;
+  margin: 0.78rem 0.72rem;
+}
+
 /*--------------------------------------------------------------------------*/
 /* Colours                                                                  */
 /*--------------------------------------------------------------------------*/
