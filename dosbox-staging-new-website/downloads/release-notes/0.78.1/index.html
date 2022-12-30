@@ -340,7 +340,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../get-involved/code-of-conduct/">
-        Code of Conduct
+        Code of conduct
       </a>
 </li>
 </ul>
@@ -433,46 +433,106 @@ dropped.</p>
 <h2 id="fixes-and-regressions">Fixes and regressions<a class="headerlink" href="#fixes-and-regressions" title="Permanent link">¶</a></h2>
 <p>Maintenance changes to 0.78.1 are as follows <em>(reported-by; fixed-by)</em>:</p>
 <ul>
-<li>Fixed a crash when exiting fullscreen mode and also using OpenGL output <em>(NicknineTheEagle; kcgen)</em></li>
-<li>Fixed a crash and host input lockup when using SDL’s kmsdrm video driver <em>(GranMinigun)</em></li>
-<li>Fixed an early exit bug when using the <code>-exit</code> and <code>-c exit</code> command-line arguments <em>(pheener and d10sfan, kcgen)</em></li>
-<li>Fixed a memory leak when changing one or more serial port types at runtime <em>(kcgen)</em></li>
-<li>Fixed a regression that failed to apply aspect correction when using pixel-perfect output modes <em>(Diduz; kcgen)</em></li>
-<li>Fixed a regression that disabled the keyboard input when using the debugger <em>(LowLevelMahn; kcgen)</em></li>
-<li>Fixed a regression that impacted 32-bit performance on some Windows systems <em>(RaymanXY; Kirk Klobe and kcgen)</em></li>
-<li>Fixed a regression that causes a crash when opening UPX-compressed code-page files <em>(FeralChild64; Wengier)</em></li>
+<li>
+<p>Fixed a crash when exiting fullscreen mode and also using OpenGL output
+  <em>(NicknineTheEagle; kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a crash and host input lockup when using SDL’s kmsdrm video driver
+  <em>(GranMinigun)</em></p>
+</li>
+<li>
+<p>Fixed an early exit bug when using the <code>-exit</code> and <code>-c exit</code> command-line
+  arguments <em>(pheener and d10sfan, kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a memory leak when changing one or more serial port types at runtime
+  <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a regression that failed to apply aspect correction when using
+  pixel-perfect output modes <em>(Diduz; kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a regression that disabled the keyboard input when using the debugger
+  <em>(LowLevelMahn; kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a regression that impacted 32-bit performance on some Windows systems
+  <em>(RaymanXY; Kirk Klobe and kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a regression that causes a crash when opening UPX-compressed code-page
+  files <em>(FeralChild64; Wengier)</em></p>
+</li>
 </ul>
 <h2 id="functionality-refinements">Functionality refinements<a class="headerlink" href="#functionality-refinements" title="Permanent link">¶</a></h2>
 <ul>
-<li>Improved the modem’s command-mode handling <em>(NicknineTheEagle)</em></li>
-<li>Corrected the modem’s DTR drop delay units from ms to hundredths of a second <em>(NicknineTheEagle)</em></li>
-<li>Reverted the allowance that let the VESA refresh rate use the host rate <em>(RaymanXY; kcgen)</em></li>
-<li>Allowed read-only image mounting for write-protected disk and floppy images <em>(Burrito78; Wengier)</em></li>
+<li>
+<p>Improved the modem’s command-mode handling <em>(NicknineTheEagle)</em></p>
+</li>
+<li>
+<p>Corrected the modem’s DTR drop delay units from ms to hundredths of a second
+  <em>(NicknineTheEagle)</em></p>
+</li>
+<li>
+<p>Reverted the allowance that let the VESA refresh rate use the host rate
+  <em>(RaymanXY; kcgen)</em></p>
+</li>
+<li>
+<p>Allowed read-only image mounting for write-protected disk and floppy images
+  <em>(Burrito78; Wengier)</em></p>
+</li>
 </ul>
 <h2 id="documentation-related-improvements">Documentation-related improvements<a class="headerlink" href="#documentation-related-improvements" title="Permanent link">¶</a></h2>
 <ul>
-<li>Updated the German messages and config file text <em>(Burrito78)</em></li>
-<li>Updated the Italian messages and config file text <em>(Kappa971)</em></li>
-<li>Fixed a documentation conflict describing the command line’s version flag <em>(arrowgent)</em></li>
-<li>Documented how to install gmock, a dependency added during 0.78.0, on Fedora <em>(oturpe)</em></li>
+<li>
+<p>Updated the German messages and config file text <em>(Burrito78)</em></p>
+</li>
+<li>
+<p>Updated the Italian messages and config file text <em>(Kappa971)</em></p>
+</li>
+<li>
+<p>Fixed a documentation conflict describing the command line’s version flag
+  <em>(arrowgent)</em></p>
+</li>
+<li>
+<p>Documented how to install gmock, a dependency added during 0.78.0, on Fedora
+  <em>(oturpe)</em></p>
+</li>
 </ul>
 <h2 id="development-and-packaging-fixes">Development and packaging fixes<a class="headerlink" href="#development-and-packaging-fixes" title="Permanent link">¶</a></h2>
 <ul>
-<li>Fixed a compilation issue with Loguru on ARM32 using GCC 8 <em>(rtissera; kcgen)</em></li>
-<li>Fixed a compilation issue with older C++17 compilers missing <code>std::filesystem</code> support <em>(jowtron; gulrak and kcgen)</em></li>
-<li>Fixed a build tool-specific bug that exposed the UI when running gmock tests <em>(oturpe and voyageur; brandonrobertz and kcgen)</em></li>
+<li>
+<p>Fixed a compilation issue with Loguru on ARM32 using GCC 8
+  <em>(rtissera; kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a compilation issue with older C++17 compilers missing
+  <code>std::filesystem</code> support <em>(jowtron; gulrak and kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a build tool-specific bug that exposed the UI when running gmock tests
+  <em>(oturpe and voyageur; brandonrobertz and kcgen)</em></p>
+</li>
 </ul>
 <h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p>The MSYS2-built debugger will fail to open if launched from the Windows UI.</p>
 <ul>
-<li>As a work-around, run it from within a command console.</li>
-<li>Thanks to <em>Sherman Perry</em> for investigating this issue and isolating it to the Windows Console API.</li>
+<li>
+<p>As a work-around, run it from within a command console.</p>
+</li>
+<li>
+<p>Thanks to <em>Sherman Perry</em> for investigating this issue and isolating it</p>
+</li>
+<li>to the Windows Console API.</li>
 </ul>
 </li>
 <li>
-<p>Audio might stutter on some Windows platforms. If your system is affected, adjust the mixer’s settings in your config file as follows:</p>
+<p>Audio might stutter on some Windows platforms. If your system is affected,
+  adjust the mixer’s settings in your config file as follows:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[mixer]</span><span class="w"></span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1024</span><span class="w"></span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25</span><span class="w"></span>
@@ -485,7 +545,8 @@ dropped.</p>
 </li>
 </ul>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">¶</a></h2>
-<p>We are extremely grateful for all contributions, including the invaluable improvements merged in from the DOSBox project.</p>
+<p>We are extremely grateful for all contributions, including the invaluable
+improvements merged in from the DOSBox project.</p>
 </article>
 </div>
 </div>
@@ -560,7 +621,7 @@ dropped.</p>
 </ul>
 </div>
 <div class="credits">
-				Powered by <a href="#">MkDocs</a>, <a href="#">MkDocs Material</a> and <a href="#">GitHub Pages</a>
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
 </div>
 </div>
 </div>

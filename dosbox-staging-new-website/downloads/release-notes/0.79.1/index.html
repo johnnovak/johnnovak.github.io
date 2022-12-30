@@ -345,7 +345,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../get-involved/code-of-conduct/">
-        Code of Conduct
+        Code of conduct
       </a>
 </li>
 </ul>
@@ -449,53 +449,121 @@ existing settings will be retained, however, extraneous comments will be
 dropped.</p>
 <h2 id="fixes-and-regressions">Fixes and regressions<a class="headerlink" href="#fixes-and-regressions" title="Permanent link">¶</a></h2>
 <ul>
-<li>Fixed a CD-DA playback regression in <strong>Might and Magic 6</strong> when using multi-image mounts <em>(kcgen)</em></li>
-<li>Allowed the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key and window-close events to exit from the paused state <em>(Wengier)</em></li>
-<li>Fixed a bug that prevented automounted drives from being used by <code>[autoexec]</code> commands <em>(kcgen)</em></li>
-<li>Fixed an audio filter reset regression flagged in <strong>Blues Brothers: Jukebox Adventure</strong> <em>(kcgen)</em></li>
-<li>Fixed a 16-bit stereo DMA regression detected when using the Sound Blaster’s <code>modern</code> filter <em>(kcgen)</em></li>
+<li>
+<p>Fixed a CD-DA playback regression in <strong>Might and Magic 6</strong> when using
+  multi-image mounts <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Allowed the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key and window-close events to exit from the paused
+  state <em>(Wengier)</em></p>
+</li>
+<li>
+<p>Fixed a bug that prevented automounted drives from being used by
+  <code>[autoexec]</code> commands <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Fixed an audio filter reset regression flagged in <strong>Blues Brothers: Jukebox
+  Adventure</strong> <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Fixed a 16-bit stereo DMA regression detected when using the Sound Blaster’s
+  <code>modern</code> filter <em>(kcgen)</em></p>
+</li>
 </ul>
 <figure>
 <video controls="controls" width="690"><source src="../videos/79-1-sb16-modern.mp4" type="video/mp4"/>Your browser does not support the <code>video</code> element.</video>
-<figcaption>303 by Acme (30fps encoding, 120k cycles, and SB16 using the <code>modern</code> filter)</figcaption>
+<figcaption>
+<p>303 by Acme — 30fps encoding, 120k cycles, and SB16 using the <code>modern</code> filter
+  </p>
+</figcaption>
 </figure>
 <h2 id="functionality-refinements">Functionality refinements<a class="headerlink" href="#functionality-refinements" title="Permanent link">¶</a></h2>
 <ul>
-<li>Improved ability to pipe between applications by using <code>Y:</code> as a temporary path <em>(Wengier)</em></li>
-<li>Switched to warning-level logging for MIDI configuration issues <em>(Michael Drueing)</em></li>
-<li>Improved the lookup of resources when XDG variables aren’t set correctly <em>(kcgen, Eli Schwartz)</em></li>
-<li>Updated the Dutch language to use the US keyboard layout by default <em>(Wengier)</em></li>
-<li>Included Xbox compatible controller mapperfiles for 180+ games: <a href="https://github.com/dosbox-staging/dosbox-staging/pull/1977">conf</a>, <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">wiki</a> <em>(nemo93)</em></li>
+<li>
+<p>Improved ability to pipe between applications by using <code>Y:</code> as a temporary
+  path <em>(Wengier)</em></p>
+</li>
+<li>
+<p>Switched to warning-level logging for MIDI configuration issues <em>(Michael
+  Drueing)</em></p>
+</li>
+<li>
+<p>Improved the lookup of resources when XDG variables aren’t set correctly
+  <em>(kcgen, Eli Schwartz)</em></p>
+</li>
+<li>
+<p>Updated the Dutch language to use the US keyboard layout by default
+  <em>(Wengier)</em></p>
+</li>
+<li>
+<p>Included Xbox compatible controller mapperfiles for 180+ games:
+  <a href="https://github.com/dosbox-staging/dosbox-staging/pull/1977">conf</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">wiki</a>
+<em>(nemo93)</em></p>
+</li>
 </ul>
 <h2 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">¶</a></h2>
 <ul>
 <li>Added Dutch translation <em>(Robert de Rooy)</em></li>
 <li>Fixed outdated content in German translation <em>(Burrito78)</em></li>
-<li>Synced Italian translation <em>(Kappa971)</em></li>
-<li>Dropped non-existant <code>KEYB</code> help messages from translation system <em>(Wengier)</em></li>
-<li>Replaced more escape codes with markup tags in the translations <em>(Robert de Rooy)</em></li>
-<li>Moved the mount type descriptions into the translation system <em>(Wengier)</em></li>
+<li>
+<p>Synced Italian translation <em>(Kappa971)</em></p>
+</li>
+<li>
+<p>Dropped non-existant <code>KEYB</code> help messages from translation system
+  <em>(Wengier)</em></p>
+</li>
+<li>
+<p>Replaced more escape codes with markup tags in the translations <em>(Robert de
+  Rooy)</em></p>
+</li>
+<li>
+<p>Moved the mount type descriptions into the translation system <em>(Wengier)</em></p>
+</li>
 </ul>
 <h2 id="wiki-updates-since-0790">Wiki updates since 0.79.0<a class="headerlink" href="#wiki-updates-since-0790" title="Permanent link">¶</a></h2>
 <ul>
-<li>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">Keymapper page</a> with examples for those with Xbox controllers (nemo93)</li>
-<li>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Frequently-Asked-Questions">FAQ</a> answering questions about audio settings, configuration files, video output, and other topics <em>(nemo93)</em></li>
-<li>Notable additions to the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/UniVBE">UniVBE</a>,
- <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Special-Keys">Special keys</a>,
- <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Get-Started">Getting started</a>,
- <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Audio-configuration-recommendations">Suggested audio settings</a>,
- <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Config-file-examples">Config examples</a>,
- <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE candidates</a>,
- and <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-CD-DA,-GUS-and-MIDI-audio">Games with CD-DA, GUS and MIDI audio</a> pages <em>(nemo93)</em></li>
+<li>
+<p>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">Keymapper page</a>
+  with examples for those with Xbox controllers (nemo93)</p>
+</li>
+<li>
+<p>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Frequently-Asked-Questions">FAQ</a>
+  answering questions about audio settings, configuration files, video output,
+  and other topics <em>(nemo93)</em></p>
+</li>
+<li>
+<p>Notable additions to the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/UniVBE">UniVBE</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Special-Keys">Special keys</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Get-Started">Getting started</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Audio-configuration-recommendations">Suggested audio settings</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Config-file-examples">Config examples</a>,
+  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE candidates</a>,
+  and <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-CD-DA,-GUS-and-MIDI-audio">Games with CD-DA, GUS and MIDI audio</a>
+  pages <em>(nemo93)</em></p>
+</li>
 </ul>
 <h2 id="packaging-fixes">Packaging fixes<a class="headerlink" href="#packaging-fixes" title="Permanent link">¶</a></h2>
 <ul>
-<li>Adjusted Meson’s FluidSynth dependency spec to match upstream’s packaging <em>(Kirk Klobe)</em></li>
-<li>Switched Meson to use SpeexDSP from the host first and fallback to wrap <em>(kcgen)</em></li>
-<li>Switched Meson to use shared (instead of static) libraries by default <em>(kcgen)</em></li>
-<li>Fixed installation of <code>resources</code> when using <code>meson install</code> <em>(kcgen, Eli Schwartz)</em></li>
+<li>
+<p>Adjusted Meson’s FluidSynth dependency spec to match upstream’s packaging
+  <em>(Kirk Klobe)</em></p>
+</li>
+<li>
+<p>Switched Meson to use SpeexDSP from the host first and fallback to wrap
+  <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Switched Meson to use shared (instead of static) libraries by default
+  <em>(kcgen)</em></p>
+</li>
+<li>
+<p>Fixed installation of <code>resources</code> when using <code>meson install</code> <em>(kcgen, Eli
+  Schwartz)</em></p>
+</li>
 </ul>
-<p>Packagers will get shared libs and installed resources with these standard steps:</p>
+<p>Packagers will get shared libs and installed resources with these standard
+steps:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>meson setup --prefix /writable/install/path build
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>meson install -C build
 </code></pre></div>
@@ -503,7 +571,8 @@ dropped.</p>
 <p>Thanks to our financial contributors who allow us to purchase
 hardware, licenses, and other non-trivial expenses to keep the team
 and project going.</p>
-<p>To support our work, donate to our <a href="https://github.com/sponsors/dosbox-staging">GitHub Sponsors</a> or
+<p>To support our work, donate to our
+<a href="https://github.com/sponsors/dosbox-staging">GitHub Sponsors</a> or
 <a href="https://opencollective.com/dosbox-staging">Open Collective</a>.</p>
 <p>We are grateful for all community contributions as well as the
 original DOSBox project, upon which DOSBox Staging is based.</p>
@@ -581,7 +650,7 @@ original DOSBox project, upon which DOSBox Staging is based.</p>
 </ul>
 </div>
 <div class="credits">
-				Powered by <a href="#">MkDocs</a>, <a href="#">MkDocs Material</a> and <a href="#">GitHub Pages</a>
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
 </div>
 </div>
 </div>

@@ -519,7 +519,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../get-involved/code-of-conduct/">
-        Code of Conduct
+        Code of conduct
       </a>
 </li>
 </ul>
@@ -784,11 +784,13 @@ and <a href="#known-issues">Known issues</a> sections before using DOSBox Stagin
 these describe important interface changes as well as information discovered
 late in the release cycle or after the release.</p>
 <h2 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">¶</a></h2>
+<div class="compact">
 <ul>
 <li><a href="/downloads/linux/">Linux</a> (or <a href="/downloads/linux#steam">Steam on Linux</a>)</li>
 <li><a href="/downloads/windows/">Windows</a></li>
 <li><a href="/downloads/macos/">macOS</a></li>
 </ul>
+</div>
 <p>The <strong>DOSBox Staging</strong> project was created September 15, 2019 as a
 <a href="https://en.wikipedia.org/wiki/Fork_(software_development)">soft-fork</a> of the SourceForge-based DOSBox project, which is a separate
 project having its own schedule and development priorities.</p>
@@ -916,14 +918,21 @@ sections of your DOSBox Staging configuration file, as follows:</p>
 </code></pre></div>
 <p>Pixel-perfect looks like this on a 1080p screen:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/homm2-pp-2x2.png"><img alt="HoMM2" src="../images/homm2-pp-2x2.png"/></a>
-</p>
-<figcaption>Heroes of Might and Magic 2 (1996) — 640×480 with a <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">pixel aspect ratio (PAR)</a> of 1:1, upscaled to 2×2</figcaption>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/homm2-pp-2x2.png"><img alt="HoMM2" src="../images/homm2-pp-2x2.png"/></a></p>
+<figcaption>
+<p>Heroes of Might and Magic 2 (1996) — 640×480
+  with a <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">pixel aspect ratio (PAR)</a>
+  of 1:1, upscaled to 2×2
+  </p>
+</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/wolf3d-pp-4x5.png"><img alt="Wolf3D" src="../images/wolf3d-pp-4x5.png"/></a>
-</p>
-<figcaption>Wolfenstein 3D (1992) — 320×200 with a PAR of 1:1.2 (non-square pixels), upscaled to 4×5 with a PAR of 1:1.25</figcaption>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/wolf3d-pp-4x5.png"><img alt="Wolf3D" src="../images/wolf3d-pp-4x5.png"/></a></p>
+<figcaption>
+<p>Wolfenstein 3D (1992) — 320×200 with a PAR of 1:1.2 (non-square
+  pixels), upscaled to 4×5 with a PAR of 1:1.25
+  </p>
+</figcaption>
 </figure>
 <h3 id="resizable-window">Resizable window<a class="headerlink" href="#resizable-window" title="Permanent link">¶</a></h3>
 <p>Being able to click and drag to resize an application’s window is not a
@@ -931,7 +940,11 @@ revolutionary feature by any measure; however it’s a welcome addition for
 DOSBox Staging!</p>
 <figure>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="472" src="https://www.youtube-nocookie.com/embed/9J2U-qFxE1E" title="YouTube video player" width="840"></iframe>
-<figcaption>Star Wars: Dark Forces (1995) intro playing while the DOSBox window is being resized vigorously</figcaption>
+<figcaption>
+<p>Star Wars: Dark Forces (1995) — intro playing while the DOSBox window is being
+  resized vigorously
+  </p>
+</figcaption>
 </figure>
 <p>This feature is a work-in-progress: it’s available on Linux by default, and can
 be enabled for testing on Windows and macOS by setting the following (but note
@@ -959,9 +972,11 @@ out-of-the-box experience for the majority of games running on modern hardware.<
 aspect ratio correction, and scale the image using the <code>sharp</code> OpenGL shader to
 provide relatively sharp pixels when in fullscreen mode.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bc.png"><img alt="Battle Chess" src="../images/bc.png"/></a>
-</p>
-<figcaption>Battle Chess (1988) — at 1080p using the default settings</figcaption>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bc.png"><img alt="Battle Chess" src="../images/bc.png"/></a></p>
+<figcaption>
+<p>Battle Chess (1988) — at 1080p using the default settings
+  </p>
+</figcaption>
 </figure>
 <h3 id="expand-mouse-control-methods">Expand mouse control methods<a class="headerlink" href="#expand-mouse-control-methods" title="Permanent link">¶</a></h3>
 <p>The prior “autolocking” mouse option used by DOSBox has been renamed in
@@ -1000,10 +1015,10 @@ recommend switching to fullscreen (<span class="keys"><kbd class="key-alt">Alt</
 <p>These options do not affect the mouse behavior in fullscreen (<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>), as the mouse is always captured.</p>
 </div>
 <h3 id="nuked-opl-v18">Nuked OPL v1.8<a class="headerlink" href="#nuked-opl-v18" title="Permanent link">¶</a></h3>
-<p>The cycle-accurate Nuked <a href="https://en.wikipedia.org/wiki/Yamaha_YMF262">OPL3</a> emulator is now used by default,
+<p>The cycle-accurate Nuked <a href="https://en.wikipedia.org/wiki/Yamaha_YMF262">OPL3</a> emulator is now used by default;
 this change improves AdLib and Sound Blaster FM music emulation accuracy.</p>
-<p>This improved accuracy comes at a slightly higher CPU use-cost, which is
-insignificant for the vast majority of users on typical desktop or laptop
+<p>This improved accuracy comes at the cost of a slightly higher CPU use, which
+is insignificant for the vast majority of users on typical desktop or laptop
 hardware.</p>
 <p>However, those using DOSBox Staging on old or CPU-limited hardware (capable of
 30,000 dosbox “cycles” or less, such as the Raspberry Pi 3) will be served best
@@ -1061,7 +1076,10 @@ emulation speed and quality across the board—this is especially visible to
 Linux and macOS users<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <figure>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="472" src="https://www.youtube-nocookie.com/embed/9N-wXIamSh4" title="YouTube video player" width="840"></iframe>
-<figcaption>Stargunner (1996, freeware) — running on Linux x86\_64 via Boxtron</figcaption>
+<figcaption>
+<p>Stargunner (1996, freeware) — running on Linux x86_64 via Boxtron
+  </p>
+</figcaption>
 </figure>
 <p>Before 64-bit dynarec, this game had serious emulation problems resulting in
 fluctuating emulation speed (sometimes too fast, sometimes too slow -
@@ -1069,14 +1087,15 @@ regardless of cycles settings). This game was designed to run with constant
 70 FPS and now it runs with constant 70 FPS.</p>
 <h3 id="cga-improvements">CGA improvements<a class="headerlink" href="#cga-improvements" title="Permanent link">¶</a></h3>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/cga-showcase-1.png"><img alt="CGA modes comparison" src="../images/cga-showcase-1.png"/></a>
-</p>
-<figcaption>Maniac Mansion (1987) — with forced CGA mode:<br/>
-    top-left: CGA, default palette;<br/>
-    top-right: CGA mono, green tint;<br/>
-    bottom-left: CGA composite, early model, default hue;<br/>
-    bottom-right: CGA composite, late model, default hue.
-  </figcaption>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/cga-showcase-1.png"><img alt="CGA modes comparison" src="../images/cga-showcase-1.png"/></a></p>
+<figcaption>
+<p>Maniac Mansion (1987) — with forced CGA mode:<br/>
+  top-left: CGA, default palette;<br/>
+  top-right: CGA mono, green tint;<br/>
+  bottom-left: CGA composite, early model, default hue;<br/>
+  bottom-right: CGA composite, late model, default hue.
+  </p>
+</figcaption>
 </figure>
 <h4 id="cga-monochrome-mode">CGA monochrome mode<a class="headerlink" href="#cga-monochrome-mode" title="Permanent link">¶</a></h4>
 <p>Many <a href="https://en.wikipedia.org/wiki/Color_Graphics_Adapter">CGA</a> games from the 80’s were designed to support monochromatic
@@ -1150,12 +1169,13 @@ ensure image post-processing is performed exclusively by the shader (and not a
 mix of the two).</p>
 </div>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/xwingce-lottes.png"><img alt="X-Wing Collector's Edition" src="../images/xwingce-lottes.png"/></a>
-</p>
-<figcaption>Star Wars™ – X-Wing: Collector's CD-ROM Edition (1994)<br/>
-    Using CRT-Lottes shader on a 1080p screen; click on the image to enlarge
-    it to see the fine details. This shader is not bundled with DOSBox Staging
-    (yet); you can download it from <a href="https://github.com/tyrells/dosbox-svn-shaders">here</a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/xwingce-lottes.png"><img alt="X-Wing Collector's Edition" src="../images/xwingce-lottes.png"/></a></p>
+<figcaption>
+<p>Star Wars™ — X-Wing: Collector’s CD-ROM Edition (1994)<br/>
+  Using CRT-Lottes shader on a 1080p screen; click on the image to enlarge it to see
+  the fine details. This shader is not bundled with DOSBox Staging (yet); you
+  can download it from <a href="https://github.com/tyrells/dosbox-svn-shaders">here</a>.
+  </p>
 </figcaption>
 </figure>
 <h3 id="date-and-time-commands-svn">DATE and TIME commands (SVN)<a class="headerlink" href="#date-and-time-commands-svn" title="Permanent link">¶</a></h3>
@@ -1205,7 +1225,7 @@ to a different location (e.g. for backup or cloud saves).</p>
   codec still works).</li>
 <li>Removed support for CD-DA playback from physical disks. It is
   still possible to install games distributed on CDs by mounting them as
-  directories. See <a href="https://github.com/dosbox-staging/dosbox-staging/issues/260">#260</a>.</li>
+  directories (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/260" title="GitHub Issue dosbox-staging/dosbox-staging #260">#260</a>)</li>
 <li>Removed CD-DA playback support for tracks using the Audio Interchange File
   Format <a href="https://en.wikipedia.org/wiki/Audio_Interchange_File_Format">AIFF</a> audio codec.</li>
 </ul>
@@ -1233,11 +1253,17 @@ to a different location (e.g. for backup or cloud saves).</p>
   push to provide immediate feedback to developers regarding build-success and
   warning-counts on:</p>
 <ul>
-<li>Windows x86_64 using GCC 32 and 64-bit, Clang 32 and 64-bit, and
-  VisualStudio 64-bit compilers</li>
-<li>macOS x86_64 using GCC and Clang compilers</li>
-<li>Linux x86_64, ARMv6, ARMv7, IBM LinuxONE, and IBM POWER8 platforms using
-  various versions of GCC and Clang</li>
+<li>
+<p>Windows x86_64 using GCC 32 and 64-bit, Clang 32 and 64-bit, and
+  VisualStudio 64-bit compilers</p>
+</li>
+<li>
+<p>macOS x86_64 using GCC and Clang compilers</p>
+</li>
+<li>
+<p>Linux x86_64, ARMv6, ARMv7, IBM LinuxONE, and IBM POWER8 platforms using
+  various versions of GCC and Clang</p>
+</li>
 </ul>
 </li>
 <li>
@@ -1246,7 +1272,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 </li>
 <li>
 <p>Added dynamic analysis checks performed by Clang’s undefined-behavior (UB)
-  sanitizer and GCC’s UB and Address sanitizers.</p>
+  sanitizer and GCC’s UB and address sanitizers.</p>
 </li>
 <li>
 <p>The CI system includes gated checks that allow maintainers to focus on code
@@ -1286,8 +1312,10 @@ to a different location (e.g. for backup or cloud saves).</p>
   Linux and macOS, and Windows Defender for Windows.</p>
 </li>
 <li>
-<p>The project has published a Code of Conduct along with clear Contributor
-  Guidelines.</p>
+<p>The project has published a
+  <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+  along with clear
+  <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/CONTRIBUTING.md">Contributor Guidelines</a>.</p>
 </li>
 </ul>
 <h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">¶</a></h3>
@@ -1299,7 +1327,8 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>Linux: Wayland crashes (Wayland support is “experimental” at the moment).</li>
 <li>Linux: Splash screen is sometimes transparent or corrupted on KDE.</li>
 </ul>
-<p>Submit new issues or learn more about existing ones using our <a href="https://github.com/dosbox-staging/dosbox-staging/issues">bug-tracker</a>.</p>
+<p>Submit new issues or learn more about existing ones using our
+<a href="https://github.com/dosbox-staging/dosbox-staging/issues">bug-tracker</a>.</p>
 <h3 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">¶</a></h3>
 <p>During the <strong>DOSBox Staging 0.75</strong> development period:</p>
 <ul>
@@ -1366,8 +1395,8 @@ to a different location (e.g. for backup or cloud saves).</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>git shortlog ^v0.75.0-pre v0.75.0 --no-merges
 </code></pre></div>
 <h3 id="merged-in-community-patches-and-libraries">Merged-in community patches and libraries<a class="headerlink" href="#merged-in-community-patches-and-libraries" title="Permanent link">¶</a></h3>
-<p>The following lists those merges performed by maintainers either on behalf-of
-or making use of patches or libraries authored by community members (in
+<p>The following lists those merges performed by maintainers either on behalf of,
+or making use of, patches or libraries authored by community members (in
 alphabetic order).</p>
 <p><strong>kcgen</strong></p>
 <ul>
@@ -1388,20 +1417,35 @@ alphabetic order).</p>
 <p><em>Changes merged-in to SVN</em></p>
 <ul>
 <li>Add OpenGL shader support <em>(ny00123 and refined by jmarsh)</em></li>
-<li>Add several builtin shaders that mimic the scalers and some extra <em>(jmarsh)</em></li>
-<li>Fix xcmpchg in dyn_x86 core. Allows Quickview to work in that core <em>(jmarsh)</em></li>
-<li>Additional refinements and speed ups <em>(jmarsh)</em></li>
+<li>
+<p>Add several builtin shaders that mimic the scalers and some extra <em>(jmarsh)</em></p>
+</li>
+<li>
+<p>Fix xcmpchg in dyn_x86 core. Allows Quickview to work in that core
+  <em>(jmarsh)</em></p>
+</li>
+<li>
+<p>Additional refinements and speed ups <em>(jmarsh)</em></p>
+</li>
 <li>Fix some issues with commit 4282 <em>(Patryk Obara and jmarsh)</em></li>
-<li>Switch to a different way to calculate the table offsets  <em>(jmarsh)</em></li>
-<li>Fix boundary checks for word/dword memory access. Speeds up dynamic 32 bit core a bit <em>(jmarsh)</em></li>
-<li>Add 64-bit support to dynamic_x86 core from vogons topic 67673 <em>(jmarsh)</em></li>
+<li>
+<p>Switch to a different way to calculate the table offsets <em>(jmarsh)</em></p>
+</li>
+<li>
+<p>Fix boundary checks for word/dword memory access. Speeds up dynamic 32 bit
+  core a bit <em>(jmarsh)</em></p>
+</li>
+<li>
+<p>Add 64-bit support to dynamic_x86 core from vogons topic 67673 <em>(jmarsh)</em></p>
+</li>
 </ul>
-<p><strong>Michael Zijlstra:</strong></p>
+<p><strong>Michael Zijlstra</strong></p>
 <ul>
 <li>Add cga_mono machine <em>(VileRancour)</em></li>
 </ul>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">¶</a></h2>
-<p>We are extremely grateful for all contributions, including the invaluable improvements merged in from the DOSBox project.</p>
+<p>We are extremely grateful for all contributions, including the invaluable
+improvements merged in from the DOSBox project.</p>
 <div class="footnote">
 <hr/>
 <ol>
@@ -1485,7 +1529,7 @@ macOS builds are 64-bits. <a class="footnote-backref" href="#fnref:1" title="Ju
 </ul>
 </div>
 <div class="credits">
-				Powered by <a href="#">MkDocs</a>, <a href="#">MkDocs Material</a> and <a href="#">GitHub Pages</a>
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
 </div>
 </div>
 </div>
