@@ -1085,10 +1085,10 @@ rest…</p>
 <p>After you’ve copied the ROM files into the appropriate location for your
 platform, start up DOSBox again and run the <code>mixer /listmidi</code> command.
 This will verify your MT-32 ROM files and print a <strong><code>y</code></strong> character below the
-MT-32 ROM versions that could be successfully detected. You should get an
+MT-32 ROM versions that have been successfully detected. The green <strong><code>y</code></strong>
+character indicates the currently selected MT-32 version. You should get an
 output similar to this:</p>
-<p>TODO active
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mixer-listmidi.png"><img alt="" loading="lazy" src="../images/mixer-listmidi.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/mixer-listmidi.png"><img alt="" loading="lazy" src="../images/mixer-listmidi.png"/></a></p>
 <h3 id="selecting-the-mt-32-version">Selecting the MT-32 version<a class="headerlink" href="#selecting-the-mt-32-version" title="Permanent link">¶</a></h3>
 <p>As you might have guessed already, you can tell DOSBox to emulate an MT-32
 model of a specific version; you can read about that <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#mt32emu">on our
@@ -1119,7 +1119,7 @@ to the tireless work of certain prestigious individuals, you can simply refer to
 <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">this
 list</a>
 that tells you the required settings for the most well-known games.</p>
-<p>Let’s consult the list and see what it says about <strong>Beneath a Steel Sky</strong>!</p>
+<p>Let’s consult the list and see what it says about Beneath a Steel Sky!</p>
 <blockquote>
 <p>Requires CM-series/LAPC-I for proper MT-32 output. Buffer overflows on MT-32 ‘old’. Combined MT-32/SB output only possible using ScummVM</p>
 </blockquote>
@@ -1164,7 +1164,7 @@ much-improved, glorious MT-32 soundtrack! Now we’re cooking with gas!</p>
 voice-over go?! Yeah… you’ve probably glossed over this little detail in the
 tip from the MT-32 wiki page:</p>
 <blockquote>
-<p style="margin: 1.3rem 0">Combined MT-32/SB output <strong>only possible</strong> using ScummVM</p>
+<p style="margin: 1.3rem 0">Combined MT-32/SB output <em>only possible</em> using ScummVM</p>
 </blockquote>
 <p>So what this means for us ordinary mortals is that in the original game, you
 can either use MT-32 for music and sound effects, and you get <em>no</em> speech, or
@@ -1195,7 +1195,7 @@ then the stretching happens because of the 1:1.2 pixel aspect ratio of the
 explanation</a> again to
 refresh your memory).</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bass-aspect.png"><img alt="" loading="lazy" src="../images/bass-aspect.png" width="90%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bass-aspect.jpg"><img alt="" loading="lazy" src="../images/bass-aspect.jpg" width="90%"/></a></p>
 <figcaption>
   Left: Screenshot from the intro with aspect ratio correction disabled (square pixels)<br/>
   Right: The original image from the comic book included with the game
@@ -1216,6 +1216,21 @@ fullscreen:</p>
 <a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
 <a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
 </code></pre></div>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bass-ingame1.png"><img alt="Beneath a Steel Sky --- Opening scene" loading="lazy" src="../images/bass-ingame1.png"/></a></p>
+<figcaption>
+<p>Beneath a Steel Sky with 1280×800 viewport resolution restriction and
+  aspect ratio correction disabled
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/bass-ingame2.png"><img alt="Beneath a Steel Sky --- Opening scene" loading="lazy" src="../images/bass-ingame2.png"/></a></p>
+<figcaption>
+<p>Beneath a Steel Sky — Well, we won’t escape this way…
+  </p>
+</figcaption>
+</figure>
 <p>Of course, this would’ve been a very misguided effort if it had only fixed the
 intro graphics but not the in-game visuals. Fortunately, it turns out both the
 intro and the in-game content had been drawn assuming square pixels. For

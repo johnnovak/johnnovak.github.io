@@ -467,10 +467,13 @@ It’s best to create this folder in your regular documents folder so DOSBox has
 full read and write access to it (don’t put it in a system folder, e.g.,
 <code>Program Files</code> on Windows). Each game will have its dedicated subfolder under
 <code>DOS Games</code>, so let’s create our first one called <code>Prince of Persia</code>.</p>
-<p>Now download <a href="TODO pop1.zip">pop1.zip</a> and extract its contents
-into <code>DOS Games/Prince of Persia</code>. The archive contained only two files:
-<code>pop1.txt</code> (a regular text file) and <code>pop1demo.exe</code> (an MS-DOS executable).
-Let’s open the text file in our text editor!</p>
+<p>Now download
+<a href="https://www.dosgamesarchive.com/file/prince-of-persia/pop1">pop1.zip</a> from
+the <a href="https://www.dosgamesarchive.com/download/prince-of-persia">Prince of Persia demo
+page</a> and extract
+its contents into <code>DOS Games/Prince of Persia</code>. The archive contained only two
+files: <code>pop1.txt</code> (a regular text file) and <code>pop1demo.exe</code> (an MS-DOS
+executable). Let’s open the text file in our text editor!</p>
 <div class="highlight"><pre><span></span><code>It's like an Arabian Nights movie come to life... with you as the star!
 Leap into an exotic labyrinth of heart-stopping action, challenging mazes,
 intrigue and superb animation that's breathtakingly realistic!
@@ -498,7 +501,7 @@ myself to the door…), but DOSBox doesn’t have access to your computer’s ha
 drive by default where your programs and documents reside—we need to tell it
 which folder to use as its “virtual DOS hard drive”. This is called
 <em>mounting</em>; we <em>mount</em> a folder as the “DOS hard drive”, the contents of which
-are then available to DOSBox as the <strong>C drive</strong>. All drives in DOS are assigned
+are then available to DOSBox as the <em>C drive</em>. All drives in DOS are assigned
 to the letters of the English alphabet (just like in Windows) and the C drive
 is usually your first hard drive.</p>
 <p>The recommended way to mount the C drive is to create a <code>drives</code> subfolder
@@ -563,8 +566,8 @@ instructions won’t work.</p>
    <code>Prince of Persia</code> folder.</li>
 <li>Right-click or <span class="keys"><kbd class="key-control">Ctrl</kbd></span>-click the icon, then select the topmost
    <em>Open</em> menu item.</li>
-<li>A dialog with the following text will appear: <strong>macOS cannot verify the
-   developer of “Start DOSBox Staging”. Are you sure you want to open it?</strong></li>
+<li>A dialog with the following text will appear: <em>macOS cannot verify the
+   developer of “Start DOSBox Staging”. Are you sure you want to open it?</em></li>
 <li>Press the <em>Open</em> button.</li>
 <li>A dialog will open, asking for permission to allow DOSBox access your
    Documents folder. Click on the <em>OK</em> button.</li>
@@ -598,7 +601,7 @@ this case).</p>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
 <p>You’ll be greeted by the following window when starting DOSBox:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/start.png"><img alt="" loading="lazy" src="../images/start.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dosbox-start.png"><img alt="" loading="lazy" src="../images/dosbox-start.png"/></a></p>
 </figure>
 <p>Let’s ignore the polite welcome message for now and focus on the text below
 the blue banner.</p>
@@ -650,7 +653,6 @@ This handy feature is called <em>tab completion</em> and it saves you from a lot
 typing! Press <span class="keys"><kbd class="key-tab">Tab</kbd></span> a few more times and observe how it alternates
 between <code>POP1.TXT</code> and <code>POP1DEMO.EXE</code>; this makes sense as these are the only
 two files in the current directory that start with <code>pop</code>.</p>
-<p>TODO command history</p>
 <p>Okay, let’s make sure <code>POP1DEMO.EXE</code> is displayed in the prompt then press
 <span class="keys"><kbd class="key-enter">Enter</kbd></span> to run this executable file. It turns out this is a
 self-extracting archive that unpacks its contents into the current directory
@@ -677,6 +679,12 @@ C:\&gt;_
 Bingo, that’s our game executable! But let’s pretend we haven’t spotted it;
 how do we find all executables in the current directory? By issuing the <code>dir</code>
 command with the <code>*.exe</code> wildcard search pattern!</p>
+<p>But instead of typing in the command, press <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> a few times until <code>dir</code>
+appears in the command line, then type in the rest (<span class="keys"><kbd class="key-space">Space</kbd></span> character
+followed by <code>*.exe</code>). This handy feature is called <em>command history</em>—you can
+move forward and backward in the list of previously executed commands with the <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>
+and <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> keys, respectively.</p>
+<p>Okay, so here’s how the output looks like:</p>
 <pre class="dos-prompt">
 C:\&gt;dir *.exe
  Volume in drive C is CDRIVE
@@ -689,11 +697,12 @@ PRINCE   EXE                 123,335 03/29/1990  0:00a
 C:\&gt;_
 </pre>
 <h2 id="starting-the-game">Starting the game<a class="headerlink" href="#starting-the-game" title="Permanent link">¶</a></h2>
-<p>There’s nothing else left to do than to start <code>PRINCE.EXE</code> (type in
-<code>PRINCE.EXE</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span>). After a short loading time, the
-title screen will appear and you’ll hear the classic Prince of Persia intro
-music playing! Don’t press any key yet, just wait and watch the intro sequence
-until the end to learn about the game’s backstory.</p>
+<p>There’s nothing else left to do than to start <code>PRINCE.EXE</code> (type in the letter
+<code>P</code>, press <span class="keys"><kbd class="key-tab">Tab</kbd></span> to auto-complete it to <code>PRINCE.EXE</code>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span>).
+After a short loading time, the title screen will appear and you’ll hear the
+classic Prince of Persia intro music playing! Don’t press any key yet, just
+wait and watch the intro sequence until the end to learn about the game’s
+backstory.</p>
 <div class="image-grid">
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-title.png"><img alt="Prince of Persia title screen" loading="lazy" src="../images/pop-title.png"/></a></p>
@@ -715,13 +724,13 @@ will soon meet his untimely death… Surely we can do better than that! Press
 any key to start the game!</p>
 <p>You control the prince with the cursor keys, and you can walk carefully by
 holding the <span class="keys"><kbd class="key-shift">Shift</kbd></span> key. It’s not that hard to figure out the various
-movement combinations on your own, but reading the <strong>Controlling Your
-Movements</strong> section of the <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">user
+movement combinations on your own, but reading the <em>Controlling Your
+Movements</em> section of the <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">user
 manual</a>
 should definitely help. The manual also contains helpful hints and a full list
 of keyboard shortcuts you can use during the game.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ingame.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-ingame.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-vga.png" width="88%"/></a></p>
 <figcaption>
 <p>This is where the adventure starts!
   </p>

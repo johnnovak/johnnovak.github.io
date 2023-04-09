@@ -641,14 +641,20 @@ common display adapters, but it also correctly auto-detects them. This is in
 contrast with the majority of games where you need to configure the graphics
 manually.</p>
 <h3 id="vga">VGA<a class="headerlink" href="#vga" title="Permanent link">¶</a></h3>
+<p>The art in Prince of Persia was created for VGA first, so quite naturally the
+game looks best on a VGA adapter. Most DOS games from the 1990s use the
+320×200 low-resolution VGA mode that allows up to 256 colours to be
+displayed on the screen, chosen from a palette of 16 million colours.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ingame.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-ingame.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-vga.png"/></a></p>
 <figcaption>
 <p>Prince of Persia in VGA mode with the default settings.
   </p>
 </figcaption>
 </figure>
 <h3 id="ega">EGA<a class="headerlink" href="#ega" title="Permanent link">¶</a></h3>
+<p>Most games with EGA support use the 320×200 low-resolution EGA mode that
+has a fixed 16-colour palette.</p>
 <p>To run Prince of Persia in EGA mode, you simply need to tell DOSBox to emulate
 a machine equipped with an EGA adapter. That can be easily done by adding the
 following configuration snippet:</p>
@@ -657,7 +663,7 @@ following configuration snippet:</p>
 </code></pre></div>
 <p>This is how the game looks with the fixed 16-colour EGA palette:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega.png"><img alt="" loading="lazy" src="../images/pop-ega.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega.png"><img alt="" loading="lazy" src="../images/pop-ega.png"/></a></p>
 <figcaption>
 <p>Prince of Persia in EGA mode
   </p>
@@ -666,14 +672,14 @@ following configuration snippet:</p>
 <p>That’s nice, but it’s not exactly how the graphics looked on an EGA monitor
 back in the day. Pre-VGA monitors had visible scanlines, and we can emulate
 that by enabling an OpenGL shader that emulates the CRT monitors
-(<strong>C</strong>athode-<strong>R</strong>ay <strong>T</strong>ube) of the era:</p>
+(Cathode-Ray Tube) of the era:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">[render]</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
 </code></pre></div>
 <p>This adds some texture and detail to the image that’s especially apparent on
 the solid-coloured bricks:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega-crt.png"><img alt="" loading="lazy" src="../images/pop-ega-crt.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega-crt.jpg"><img alt="" loading="lazy" src="../images/pop-ega-crt.jpg"/></a></p>
 <figcaption>
 <p>Prince of Persia in EGA mode using the <code>crt/aperture</code> shader
   </p>
@@ -688,7 +694,10 @@ cards, and the <code>crt/pi</code> was specifically optimised for the Raspberry 
 <h3 id="cga">CGA<a class="headerlink" href="#cga" title="Permanent link">¶</a></h3>
 <p>The notorious CGA adapter, the first colour graphics adapter created for the
 original IBM PC in 1981, is a serious contender for the worst graphics
-standard ever invented. But no matter; the game supports it, so we’ll have a
+standard ever invented. In its 320×200 low-resolution mode, 4 colours
+can be displayed simultaneously on the screen chosen from a number of fixed
+palettes. Frankly, all combinations look pretty horrible…</p>
+<p>But no matter; the game supports it, so we’ll have a
 look at it. Make the following adjustment to the <code>machine</code> setting, and don’t
 forget to put on your safety glasses! <img alt="😎" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f60e.svg" title=":sunglasses:"/></p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">[dosbox]</span>
@@ -697,20 +706,27 @@ forget to put on your safety glasses! <img alt="😎" class="twemoji" src="https
 <p>Ready? Behold the formidable 4-colour CGA graphics—and what 4 colours those
 are!</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-cga-crt.png"><img alt="" loading="lazy" src="../images/pop-cga-crt.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-cga-crt.jpg"><img alt="" loading="lazy" src="../images/pop-cga-crt.jpg"/></a></p>
 <figcaption>
 <p>Prince of Persia in CGA mode using the <code>crt/aperture</code> shader
   </p>
 </figcaption>
 </figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To compare how the game looks on different graphics adapters, Click on one
+of the CRT shader screenshots to enlarge it, then use the <span class="keys"><kbd class="key-arrow-left">Left</kbd></span> and
+<span class="keys"><kbd class="key-arrow-right">Right</kbd></span> arrow keys to switch between the images.</p>
+</div>
 <h3 id="hercules">Hercules<a class="headerlink" href="#hercules" title="Permanent link">¶</a></h3>
-<p>The Hercules display adapter only supports monochrome graphics, but at a higher
-720×348 resolution. Can you guess how you can enable it?</p>
+<p>The Hercules display adapter was released in 1982 to expand the text-only IBM
+PCs with basic graphical capabilities. It only supports monochrome graphics,
+but at a higher 720×348 resolution. Can you guess how you can enable it?</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[dosbox]</span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">hercules</span>
 </code></pre></div>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-hercules-crt-white.png"><img alt="" loading="lazy" src="../images/pop-hercules-crt-white.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-hercules-crt-white.png"><img alt="" loading="lazy" src="../images/pop-hercules-crt-white.png"/></a></p>
 <figcaption>
 <p>Prince of Persia in Hercules mode using the <code>white</code> palette<br/>and the
   <code>crt/aperture</code> shader
@@ -754,11 +770,11 @@ Hercules or CGA adapter in 1990, being able to play Prince of Persia with
 <em>any</em> graphics surely beat no game at all!</p>
 <p>Although we’ve shown how to emulate these earlier graphics standards for
 completeness’ sake, there’s generally little reason for <em>not</em> playing a
-DOS with the best graphics. The list of possible reasons include: a)
-strong nostalgic feelings towards a particular display adapter, b)
-research reasons, c) you like your games to look like the user interface
-of an industrial CNC machine, d) a preference for pain. But hey, who are
-we to judge? <img alt="😆" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f606.svg" title=":laughing:"/></p>
+DOS game with the best graphics. The list of possible reasons include: a)
+strong nostalgic feelings towards a particular display adapter; b)
+research reasons; c) you like your games to look like the user interface
+of an industrial CNC machine; d) a preference for pain. But hey, who are
+we to judge?</p>
 <p>In any case, preserving all relevant aspects of PC gaming history is
 important for the DOSBox project, so these display options are always
 available at your fingertips, should you need ever them.</p>
@@ -801,7 +817,7 @@ double-scanned VGA emulation:</p>
 <a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">[render]</span>
 <a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
 </code></pre></div>
-<p>TODO pictures</p>
+<p>TODO insert example pictures</p>
 <h2 id="chorus-reverb">Chorus &amp; reverb<a class="headerlink" href="#chorus-reverb" title="Permanent link">¶</a></h2>
 <p>We’ve been discussing graphics at great length, but what about sound? Can’t
 we do something cool to the sound as well?</p>
@@ -908,8 +924,9 @@ log window by passing the <code>-noconsole</code> argument to the DOSBox executa
 application icon, or with the <em>Start DOSBox Staging</em> icon you copied from the
 <code>.dmg</code> installer archive earlier.</p>
 <p>To make the log window appear, you need to use another shortcut icon called
-<em>Start DOSBox Staging <strong>(logging)</strong></em>, which you can copy into your game folder
-from the same <code>.dmg</code> archive.</p>
+<em>Start DOSBox Staging (logging)</em>, which you can copy into your game folder
+from the same <code>.dmg</code> archive (note the word “logging” in the name of the
+icon).</p>
 <h3>Linux</h3>
 <p>Start DOSBox from the terminal, and the logs will be output there.</p>
 <hr/>
@@ -917,7 +934,7 @@ from the same <code>.dmg</code> archive.</p>
 details about what DOSBox is currently doing, what exact settings it uses, and
 so on. For example, this is the start of the log when running the game on
 macOS:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs1.jpg"><img alt="" loading="lazy" src="../images/pop-logs1.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs1.png"><img alt="" loading="lazy" src="../images/pop-logs1.png"/></a></p>
 <p>That’s all good and well, but what’s even better, if something is invalid in
 the config, or something goes wrong when running the game and DOSBox can
 detect it, it will report these issues to us in the logs!</p>
@@ -944,7 +961,7 @@ just to trigger some errors:</p>
 </code></pre></div>
 <p>Restart DOSBox, and as expected, we’ll see some warnings and errors in the
 logs:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs2.jpg"><img alt="" loading="lazy" src="../images/pop-logs2.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs2.png"><img alt="" loading="lazy" src="../images/pop-logs2.png"/></a></p>
 <p>Warnings are yellow, errors are red. Errors are generally reserved for more
 severe problems. In this example, we have the following:</p>
 <ul>
