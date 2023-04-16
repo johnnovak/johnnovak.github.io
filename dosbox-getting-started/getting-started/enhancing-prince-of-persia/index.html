@@ -11,9 +11,9 @@
 <link href="../prince-of-persia/" rel="prev"/>
 <link href="../passport-to-adventure/" rel="next"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>Enhancing Prince of Persia - DOSBox Staging</title>
-<link href="../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -534,32 +534,36 @@
 <article class="md-content__inner md-typeset">
 <h1 id="enhancing-prince-of-persia">Enhancing Prince of Persia<a class="headerlink" href="#enhancing-prince-of-persia" title="Permanent link">¶</a></h1>
 <h2 id="fullscreen-mode">Fullscreen mode<a class="headerlink" href="#fullscreen-mode" title="Permanent link">¶</a></h2>
-<p>You can toggle between windowed and fullscreen modes at any time by pressing
+<p>You can toggle between windowed and fullscreen mode at any time by pressing
 <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>. But what if you always want to play the game
 in fullscreen? Wouldn’t it be nice to configure DOSBox to start in fullscreen
 mode?</p>
 <p>You can easily do that by setting <code>fullscreen = on</code> in the <code>[sdl]</code> section.
 Modify your <code>dosbox.conf</code> file so it has the following content, then restart
-DOSBox.</p>
+DOSBox Staging.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[sdl]</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">[autoexec]</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="na">c</span><span class="o">:</span>
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="na">prince</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="na">exit</span>
 </code></pre></div>
+<p>Note we’ve also added the <code>exit</code> command to the end of the <code>[autoexec]</code>
+section; with this in place, DOSBox will quit itself after we exit from the
+game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span>. Not strictly necessary, but a nice touch.</p>
 <div class="admonition note">
 <p class="admonition-title">Toggling options</p>
 <p>For configuration settings that toggle an option, you can use <strong><code>on</code></strong>,
-<strong><code>enabled</code></strong>, <strong><code>yes</code></strong>, <strong><code>true</code></strong> or <strong><code>1</code></strong> for turning the option on,
+<strong><code>enabled</code></strong>, <strong><code>yes</code></strong>, <strong><code>true</code></strong> or <strong><code>1</code></strong> for turning the option <em>on</em>,
 and <strong><code>off</code></strong>, <strong><code>disabled</code></strong>, <strong><code>no</code></strong>, <strong><code>false</code></strong> or <strong><code>0</code></strong> for
-turning it off.</p>
+turning it <em>off</em>.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Making configuration changes</p>
-<p>You need to quit and restart DOSBox after updating <code>dosbox.conf</code> for the
-changes to take effect. We will not mention this every single time from
-now on.</p>
+<p>You need to quit and restart DOSBox Staging after updating <code>dosbox.conf</code>
+for the changes to take effect. We will not mention this every single time
+from now on.</p>
 </div>
 <h2 id="custom-viewport-resolution">Custom viewport resolution<a class="headerlink" href="#custom-viewport-resolution" title="Permanent link">¶</a></h2>
 <p>That’s nice, but depending on the size of your monitor, 320×200 VGA
@@ -585,24 +589,25 @@ while keeping the correct aspect ratio.</p>
 </div>
 <p>Huh, what? Where’s the <code>840</code> in our config coming from then?</p>
 <p>Computer monitors were originally <em>not</em> widescreen but had a 4:3 aspect ratio,
-just like old TVs. The complete switch to 16:9 in computer monitors and
-laptops happened only by the early 2010s. The low-resolution 320×200 VGA
-mode was designed to completely fill a 4:3 monitor, but that’s only possible if the pixels
-are not square, but slightly taller. If you do the maths, it turns out they
-need to be exactly 20% taller for the 320×200 VGA screen mode (1:1.2
-pixel aspect ratio). 700 × 1.2 = 840, so that’s the explanation.</p>
+just like old television sets. The complete switch to 16:9 in computer
+monitors and laptops happened only by the early 2010s. The low-resolution
+320×200 VGA mode was designed to completely fill a 4:3 monitor, but
+that’s only possible if the pixels are not perfect squares, but slightly
+tall rectangles. If you do the maths, it turns out they need to be exactly 20% taller
+for the 320×200 VGA screen mode (1:1.2 pixel aspect ratio). 700 ×
+1.2 = 840, so that’s the explanation.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-viewport.png"><img alt="Prince of Persia in fullscreen with 1120×840 viewport resolution restriction" loading="lazy" src="../images/pop-viewport.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="images/pop-viewport.png"><img alt="Prince of Persia in fullscreen with 1120×840 viewport resolution restriction" loading="lazy" src="images/pop-viewport.png"/></a></p>
 <figcaption>
 <p>Prince of Persia in fullscreen with 1120×840 viewport resolution restriction
   </p>
 </figcaption>
 </figure>
 <p>In any case, you don’t need to worry about aspect ratio correctness because
-DOSBox handles that automatically for you out-of-the-box. It’s just good to
-have some level of understanding of what’s really happening. If you specify
-<code>1120x700</code>, that would also work, but because aspect ratio correction is
-enabled by default, and the image must fit within the bounds of the
+DOSBox Staging handles that automatically for you out of the box. It’s just
+good to have some level of understanding of what’s really happening. If you
+specify <code>1120x700</code>, that would also work, but because aspect ratio correction
+is enabled by default, and the image must fit within the bounds of the
 specified viewport rectangle, the dimensions of the resulting image will be
 933 by 700 pixels (because 700 × 4/3 = 933).</p>
 <p>But hey, not everybody likes maths, especially in the middle of a DOS gaming
@@ -611,22 +616,23 @@ desktop resolution:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">80%</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">When pixels are not square</p>
+<p class="admonition-title">When pixels are not squares</p>
 <p>Sadly, this very important fact of computing history that monitors were
-not widescreen until about 2010 tends to be forgotten nowadays. Older
+<em>not</em> widescreen until about 2010 tends to be forgotten nowadays. Older
 DOSBox versions did not perform aspect ratio correction by default, which
 certainly did not help matters either. The unfortunate situation is that
 you’re much more likely to encounter videos and screenshots of DOS games
 in the wrong aspect ratio (using square pixels) on the Internet today.
 Well, that’s only true for more recently created content—if you check
-out any computer magazine from the 80s and the 90s, all screenshots are
-shown in the correct aspect ratio, of course.</p>
+out old computer magazine from the 1980s and the 90s, most screenshots are
+shown in the correct aspect ratio (rarely, the magazines got it wrong
+too…)</p>
 <p>In case you’re wondering, pixels are completely square in 640×480
 and higher resolutions (1:1 pixel aspect ratio), but there exist a few
-more weird screen modes with non-rectangular pixels, e.g., the
-640×350 EGA mode with 1:1.3714 pixel aspect ratio (PAR), the
-640×200 EGA mode with 1.2.4 PAR, and the
-720×348 Hercules graphics mode with 1:1.5517 PAR.</p>
+more weird screen modes with non-square pixels, e.g., the 640×350
+EGA mode with 1:1.3714 pixel aspect ratio (PAR), the 640×200 EGA
+mode with 1:2.4 PAR, and the 720×348 Hercules graphics mode with
+1:1.5517 PAR.</p>
 </div>
 <h2 id="graphics-adapter-options">Graphics adapter options<a class="headerlink" href="#graphics-adapter-options" title="Permanent link">¶</a></h2>
 <p>DOSBox emulates an SVGA (Super VGA) display adapter by default, which gives
@@ -635,20 +641,19 @@ all common display adapters from the history of the PC compatibles: the
 Hercules, CGA, and EGA display adapters, among many others.</p>
 <p>Although the VGA standard was introduced in 1987, it took a good five years
 until it gained widespread adoption. Games had to support all commonly used
-graphical standards during this transitional period.</p>
-<p>Prince of Persia released in 1990 is such a game; it not only supports all
-common display adapters, but it also correctly auto-detects them. This is in
-contrast with the majority of games where you need to configure the graphics
-manually.</p>
+graphical standards during this transitional period. Prince of Persia,
+released in 1990, is such a game; it not only supports all common display
+adapters, but it also correctly auto-detects them. This is in contrast with
+the majority of DOS games where you need to configure the graphics manually.</p>
 <h3 id="vga">VGA<a class="headerlink" href="#vga" title="Permanent link">¶</a></h3>
 <p>The art in Prince of Persia was created for VGA first, so quite naturally the
 game looks best on a VGA adapter. Most DOS games from the 1990s use the
 320×200 low-resolution VGA mode that allows up to 256 colours to be
 displayed on the screen, chosen from a palette of 16 million colours.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-vga.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png"><img alt="Prince of Persia in VGA mode with the default settings" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png"/></a></p>
 <figcaption>
-<p>Prince of Persia in VGA mode with the default settings.
+<p>Prince of Persia in VGA mode with the default settings
   </p>
 </figcaption>
 </figure>
@@ -658,12 +663,12 @@ has a fixed 16-colour palette.</p>
 <p>To run Prince of Persia in EGA mode, you simply need to tell DOSBox to emulate
 a machine equipped with an EGA adapter. That can be easily done by adding the
 following configuration snippet:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">[sdl]</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">[dosbox]</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ega</span>
 </code></pre></div>
 <p>This is how the game looks with the fixed 16-colour EGA palette:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega.png"><img alt="" loading="lazy" src="../images/pop-ega.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-ega/pop-ega.png"><img alt="Prince of Persia in EGA mode" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-ega/pop-ega.png"/></a></p>
 <figcaption>
 <p>Prince of Persia in EGA mode
   </p>
@@ -679,13 +684,13 @@ that by enabling an OpenGL shader that emulates the CRT monitors
 <p>This adds some texture and detail to the image that’s especially apparent on
 the solid-coloured bricks:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-ega-crt.jpg"><img alt="" loading="lazy" src="../images/pop-ega-crt.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-ega/pop-ega-crt.jpg"><img alt="Prince of Persia in EGA mode using the 'crt/aperture' shader" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-ega/pop-ega-crt.jpg"/></a></p>
 <figcaption>
 <p>Prince of Persia in EGA mode using the <code>crt/aperture</code> shader
   </p>
 </figcaption>
 </figure>
-<p>If you have a 4k display, you might want to try the <code>crt/fakelottes.tweaked</code>
+<p>If you have a 4K display, you might want to try the <code>crt/fakelottes.tweaked</code>
 shader. Another good one is <code>crt/geom.tweaked</code>.</p>
 <p>The <code>crt/zfast</code> shader is a good choice for older or integrated graphics
 cards, and the <code>crt/pi</code> was specifically optimised for the Raspberry Pi.</p>
@@ -706,7 +711,7 @@ forget to put on your safety glasses! <img alt="😎" class="twemoji" src="https
 <p>Ready? Behold the formidable 4-colour CGA graphics—and what 4 colours those
 are!</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-cga-crt.jpg"><img alt="" loading="lazy" src="../images/pop-cga-crt.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-cga/pop-cga-crt.jpg"><img alt="Prince of Persia in CGA mode using the 'crt/aperture' shader" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-cga/pop-cga-crt.jpg"/></a></p>
 <figcaption>
 <p>Prince of Persia in CGA mode using the <code>crt/aperture</code> shader
   </p>
@@ -714,9 +719,21 @@ are!</p>
 </figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To compare how the game looks on different graphics adapters, Click on one
+<p>To compare how the game looks on different graphics adapters, click on one
 of the CRT shader screenshots to enlarge it, then use the <span class="keys"><kbd class="key-arrow-left">Left</kbd></span> and
 <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> arrow keys to switch between the images.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Screenshots of CRT shaders in action <em>need</em> to be viewed at 100%
+magnification; otherwise, you might see strange wavy interference patterns
+on them caused by the browser rescaling the images. These unwanted
+artifacts can sometimes
+resemble repeating rainbow-like patterns, and rest assured, that’s <em>not</em>
+how CRT emulation is supposed to look in DOSBox Staging!</p>
+<p>To view a screenshot featuring a CRT shader properly, click on the image
+to enlarge it, then if your mouse cursor looks like a magnifying glass,
+click on the image again to display it with 100% magnification.</p>
 </div>
 <h3 id="hercules">Hercules<a class="headerlink" href="#hercules" title="Permanent link">¶</a></h3>
 <p>The Hercules display adapter was released in 1982 to expand the text-only IBM
@@ -725,36 +742,42 @@ but at a higher 720×348 resolution. Can you guess how you can enable it?</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[dosbox]</span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">hercules</span>
 </code></pre></div>
+<p>If you wish to use a CRT shader, the <code>crt/aperture.mono</code> shader variant has
+been specifically created for emulating monochrome monitors (it switches off
+the RGB phosphor and aperture grille emulation of the base <code>crt/aperture</code>
+shader).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[render]</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture.mono</span>
+</code></pre></div>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-hercules-crt-white.png"><img alt="" loading="lazy" src="../images/pop-hercules-crt-white.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-white.png"><img alt="Prince of Persia in Hercules mode using the 'white' palette and the 'crt/aperture.mono' shader" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-white.png"/></a></p>
 <figcaption>
-<p>Prince of Persia in Hercules mode using the <code>white</code> palette<br/>and the
-  <code>crt/aperture</code> shader
+<p>Prince of Persia in Hercules mode using the <code>white</code> palette<br/>and the <code>crt/aperture.mono</code> shader
   </p>
 </figcaption>
 </figure>
-<p>Monochrome monitors came in different colours; DOSBox can emulate all these
-variations as well via the <code>monochrome_palette</code> configuration setting. The
-available colours are <code>white</code> (the default), <code>paperwhite</code>, <code>green</code>, and
+<p>Monochrome monitors came in different colours; DOSBox Staging can emulate all
+these variations via the <code>monochrome_palette</code> configuration setting.
+The available colours are <code>white</code> (the default), <code>paperwhite</code>, <code>green</code>, and
 <code>amber</code>. You can also switch between them while the game is running with the
-<span class="keys"><kbd class="key-f11">F11</kbd></span> key.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[dosbox]</span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">hercules</span>
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="na">monochrome_palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">amber</span>
+<span class="keys"><kbd class="key-f11">F11</kbd></span> key on Windows and Linux, and <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> on macOS.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">[dosbox]</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">hercules</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="na">monochrome_palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">amber</span>
 </code></pre></div>
 <p>The slightly squashed aspect ratio is correct in this case; this is exactly
 how the game would look on a PC equipped with a Hercules card connected to a
 period-accurate monochrome monitor.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-hercules-crt-amber.png"><img alt="" loading="lazy" src="../images/pop-hercules-crt-amber.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-amber.png"><img alt="Hercules mode using the 'amber' palette" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-amber.png"/></a></p>
 <figcaption>
 <p>Hercules mode using the <code>amber</code> palette
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-hercules-crt-green.png"><img alt="" loading="lazy" src="../images/pop-hercules-crt-green.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-green.png"><img alt="Hercules mode using the 'green' palette" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-hercules/pop-hercules-crt-green.png"/></a></p>
 <figcaption>
 <p>Hercules mode using the <code>green</code> palette
   </p>
@@ -776,78 +799,84 @@ research reasons; c) you like your games to look like the user interface
 of an industrial CNC machine; d) a preference for pain. But hey, who are
 we to judge?</p>
 <p>In any case, preserving all relevant aspects of PC gaming history is
-important for the DOSBox project, so these display options are always
-available at your fingertips, should you need ever them.</p>
+important for the DOSBox Staging project, so these display options are
+always available at your fingertips, should you ever need them.</p>
 </div>
 <h2 id="true-vga-emulation">“True VGA” emulation<a class="headerlink" href="#true-vga-emulation" title="Permanent link">¶</a></h2>
 <p>If you’re the lucky owner of a high-resolution monitor with at least 2000
 pixels of native vertical resolution (4K or better monitors belong to this
-category), you can enable “true VGA” emulation that more accurately
-resembles the output of a CRT VGA monitor.</p>
+category), you can use “true VGA” emulation that more accurately resembles the
+output of an actual CRT VGA monitor.</p>
 <p>VGA display adapters have a peculiarity that they display not one but <em>two</em>
-scanlines per pixel. This means the 320×200 low-resolution VGA
-mode is really 640×400, just pixel and line-doubled.</p>
-<p>We can turn on this special line-doubling behaviour by selecting the <code>vgaonly</code>
-machine type. Additionally, we’ll use a CRT shader and exact 4-times scaling
-by setting the viewport resolution to 1280×960. This is important for
-getting even scanlines, and it doesn’t work on regular 1080p monitors because
-there’s simply not enough vertical resolution for the shader to work with.</p>
+scanlines per pixel in all low-resolution screen modes that have less than 350
+lines. This means the 320×200 low-resolution VGA mode is really
+640×400, just pixel and line-doubled.</p>
+<p>To emulate this, we’ll use a CRT shader and exact 4-times scaling by setting
+the viewport resolution to 1280×960. This is important for getting even
+scanlines, and it doesn’t work on regular 1080p monitors because there’s
+simply not enough vertical resolution for the shader to work with.</p>
 <div class="admonition note">
 <p class="admonition-title">Logical vs physical pixels</p>
 <p>Wait a minute, 1280×960 fits into a 1920x1080 screen, doesn’t it?
 Why did you say we need a 4K display for this then?</p>
 <p>Most operating systems operate in high-DPI mode using a 200% scaling
-factor when a 4K display is connected. This means that the pixel
-dimensions used by the applications no longer represent <em>physical pixels</em>,
-but rather <em>logical</em> or <em>device-independent pixels</em>. On a 4K monitor,
-assuming a typical 200% scaling factor, our viewport resolution specified
-in 1280×960 <em>logical pixels</em> will translate to 2560×1920
-<em>physical pixels</em>. A vertical resolution of 1920 pixels is certainly
-sufficient for displaying those 400 scanlines; the shader can use 4.8
-pixels per scanline to do its magic.</p>
+factor on 4K displays. This means that the pixel dimensions used by the
+applications no longer represent <em>physical pixels</em>, but rather <em>logical</em>
+or <em>device-independent pixels</em>. On a 4K display, assuming a typical 200%
+scaling factor, our viewport resolution specified in 1280×960
+<em>logical pixels</em> will translate to 2560×1920 <em>physical pixels</em>. A
+vertical resolution of 1920 pixels is certainly sufficient for displaying
+those 400 scanlines; the shader can use 4.8 pixels per scanline to do its
+magic (generally, you need at least 3 pixels per “emulated scanline” to
+achieve good results).</p>
 </div>
 <p>These are the relevant configuration settings to enable authentic
 double-scanned VGA emulation:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">[dosbox]</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vgaonly</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x960</span>
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">[render]</span>
-<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">[sdl]</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x960</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">[render]</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
 </code></pre></div>
-<p>TODO insert example pictures</p>
+<p>Here’s a comparison of how true VGA emulation looks at 4K resolution compared
+to the standard “raw sharp pixel” look (zoom in to appreciate the differences):</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-true-vga.png"><img alt='"True VGA" emulation vs "raw sharp pixels"' loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-true-vga.png"/></a></p>
+<figcaption>
+<p>Left: “True VGA” emulation; Right: default output (“raw sharp pixels”)
+  </p>
+</figcaption>
+</figure>
 <h2 id="chorus-reverb">Chorus &amp; reverb<a class="headerlink" href="#chorus-reverb" title="Permanent link">¶</a></h2>
 <p>We’ve been discussing graphics at great length, but what about sound? Can’t
 we do something cool to the sound as well?</p>
 <p>Yes, we can! DOSBox Staging has an exciting feature to add chorus and reverb
 effects to the output of any of the emulated sound devices.</p>
 <p>Create a new <code>[mixer]</code> section in your config with the following content:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">[mixer]</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">[mixer]</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
 </code></pre></div>
-<p>Now the intro music sounds a lot more spacious a pleasant to listen to,
-especially with headphones. There’s even some reverb added to the in-game
+<p>Now the intro music sounds a lot more spacious and pleasant to listen to,
+especially through headphones. There’s even some reverb added to the in-game
 footsteps and sound effects, although to a much lesser extent.</p>
-<p>You might want to experiment with the <code>small</code> and <code>medium</code> reverb settings,
-and the <code>light</code> and <code>strong</code> chorus settings as well.</p>
+<p>You might want to experiment with the <code>small</code> and <code>medium</code> reverb presets, and
+the <code>light</code> and <code>strong</code> chorus settings as well.</p>
 <div class="admonition note">
 <p class="admonition-title">Purist alert!</p>
-<p>For the purists among you: adding reverb and chorus to the OPL synthesiser
-is something you can do on certain Sound Blaster AWE32 and AWE64 models on
-real hardware via the standard drivers.</p>
+<p>To calm the purists among you: adding reverb and chorus to the OPL
+synthesiser’s output is something you can do on certain Sound Blaster
+AWE32 and AWE64 models on real hardware too via the standard drivers.</p>
 </div>
 <h2 id="auto-pause">Auto-pause<a class="headerlink" href="#auto-pause" title="Permanent link">¶</a></h2>
-<p>Prince of Persia can be paused by pressing the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key during the
-game. But wouldn’t it be useful if DOSBox could auto-pause itself whenever you
+<p>Prince of Persia can be paused by pressing the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key during the game.
+But wouldn’t it be convenient if DOSBox could auto-pause itself whenever you
 switch to a different window? You can easily achieve that by enabling the
 <code>pause_when_inactive</code> option in the <code>[sdl]</code> section.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">[sdl]</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
 </code></pre></div>
 <p>Restart the game and switch to a different window—DOSBox has paused itself.
 Switch back to DOSBox—the game resumes. Nifty, isn’t it? This is quite
@@ -855,72 +884,66 @@ handy for those games that have no pause functionality, or when you need to
 take a break during a long cutscene that cannot be paused.</p>
 <h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">¶</a></h2>
 <p>Below is the full config with all the enhancements we’ve added, including
-authentic VGA CRT monitor emulation on 4K displays. Note we’ve added the
-<code>exit</code> command to the end of the <code>[autoexec]</code> section; with this in place,
-DOSBox will quit itself after we exit from the game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span>.
-Not strictly necessary, but a nice touch.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x960</span>
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>
-<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="k">[dosbox]</span>
-<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vgaonly</span>
-<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>
-<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="k">[render]</span>
-<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
-<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a>
-<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="k">[mixer]</span>
-<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a>
-<a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="k">[autoexec]</span>
-<a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="na">c</span><span class="o">:</span>
-<a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="na">prince</span>
-<a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="na">exit</span>
-</code></pre></div>
-<p>If you’re on a 1080p display, just delete the whole <code>[dosbox]</code> and <code>[render]</code>
-sections to remove the VGA double-scan emulation and the CRT shader.</p>
-<h2 id="configuration-comments">Configuration comments<a class="headerlink" href="#configuration-comments" title="Permanent link">¶</a></h2>
-<p>Instead of deleting those lines, you can prefix them with a <code>#</code> character
-(<span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-3">3</kbd></span> on the US keyboard layout) to turn them into comments.</p>
-<p>Comments are lines starting with a <code>#</code> character; DOSBox ignores them when
-reading the configuration. Normally, you would use them to add, well,
-comments to your config, but “commenting out” a line is a quick way to
-disable it without actually removing it.</p>
+authentic VGA CRT monitor emulation on 4K displays.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">[sdl]</span>
 <a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 <a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x960</span>
 <a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
 <a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>
-<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="c1">#[dosbox]</span>
-<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="c1">#machine = vgaonly</span>
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">[render]</span>
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt/aperture</span>
 <a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>
-<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1">#[render]</span>
-<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="c1">#glshader = crt/aperture</span>
-<a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a>
-<a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="k">[mixer]</span>
-<a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a>
-<a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="k">[autoexec]</span>
-<a href="#__codelineno-12-17" id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="na">c</span><span class="o">:</span>
-<a href="#__codelineno-12-18" id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="na">prince</span>
-<a href="#__codelineno-12-19" id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="na">exit</span>
+<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="k">[mixer]</span>
+<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a>
+<a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="na">prince</span>
+<a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="na">exit</span>
 </code></pre></div>
+<p>If you’re not on a high-DPI display, just delete the whole <code>[render]</code> section
+to disable the CRT shader.</p>
+<h2 id="configuration-comments">Configuration comments<a class="headerlink" href="#configuration-comments" title="Permanent link">¶</a></h2>
+<p>Instead of deleting those lines, you can prefix them with a <code>#</code> character
+(<span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-3">3</kbd></span> on the US keyboard layout) to turn them into <em>comments</em>.</p>
+<p>Comments are lines starting with a <code>#</code> character; DOSBox ignores them when
+reading the configuration. Normally, you would use them to add, well,
+comments to your config, but “commenting out” a line is a quick way to
+disable it without actually removing the line.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">[sdl]</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x960</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="k">[render]</span>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="c1">#glshader = crt/aperture</span>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a>
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="k">[mixer]</span>
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a>
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="na">prince</span>
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="na">exit</span>
+</code></pre></div>
+<p>Note we haven’t commented out the <code>[render]</code> section itself. That’s fine;
+empty sections are allowed and do no harm.</p>
 <h2 id="inspecting-the-logs">Inspecting the logs<a class="headerlink" href="#inspecting-the-logs" title="Permanent link">¶</a></h2>
 <p>What if you used a wrong value in your config, made a typo, or misremembered
-the name of a setting? How would you know about it? Having the triple-check
+the name of a setting? How would you know about it? Having to triple-check
 every single character of the config when something goes wrong is not a good
-prospect. Fortunately, you don’t have to do that because DOSBox can inform you
-if something is wrong. It does that via the <em>logs</em>, which is just a continuous
-stream of timestamped messages in a separate window.</p>
+prospect… Fortunately, you don’t have to do that because DOSBox can inform
+you if something went wrong. It does that via the <em>logs</em>, which is just a
+continuous stream of timestamped messages in a separate window.</p>
 <p>The behaviour of the log window is different on each platform:</p>
 <h3>Windows</h3>
-<p>The log window is opened by default when you start DOSBox. You can hide the
-log window by passing the <code>-noconsole</code> argument to the DOSBox executable.</p>
+<p>The log window is opened by default when you start DOSBox Staging . You can
+hide the log window by passing the <code>-noconsole</code> argument to the DOSBox
+Staging executable.</p>
 <h3>macOS</h3>
-<p>DOSBox does not open the log window by default when started via its
+<p>DOSBox Staging does not open the log window by default when started via its
 application icon, or with the <em>Start DOSBox Staging</em> icon you copied from the
 <code>.dmg</code> installer archive earlier.</p>
 <p>To make the log window appear, you need to use another shortcut icon called
@@ -928,18 +951,18 @@ application icon, or with the <em>Start DOSBox Staging</em> icon you copied from
 from the same <code>.dmg</code> archive (note the word “logging” in the name of the
 icon).</p>
 <h3>Linux</h3>
-<p>Start DOSBox from the terminal, and the logs will be output there.</p>
+<p>Start DOSBox Staging from the terminal, and the logs will appear there.</p>
 <hr/>
-<p>Under normal circumstances, the log contains lots of interesting technical
-details about what DOSBox is currently doing, what exact settings it uses, and
-so on. For example, this is the start of the log when running the game on
-macOS:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs1.png"><img alt="" loading="lazy" src="../images/pop-logs1.png"/></a></p>
-<p>That’s all good and well, but what’s even better, if something is invalid in
-the config, or something goes wrong when running the game and DOSBox can
-detect it, it will report these issues to us in the logs!</p>
-<p>Let’s now try to intentionally screw a few things up in the configuration,
-just to trigger some errors:</p>
+<p>Under normal circumstances, the logs contain lots of interesting technical
+details about what DOSBox Staging is currently doing, what exact settings it
+uses, and so on. For example, this is the start of the logs when running the
+game on macOS:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs1.png"><img alt="Example DOSBox logs" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs1.png"/></a></p>
+<p>That’s all good and well, but what’s even better, if an invalid configuration
+setting has been detected, or something went wrong when running the game,
+DOSBox Staging will inform us about it in the logs!</p>
+<p>Let’s now intentionally screw a few things up in the config to trigger some
+errors:</p>
 <div class="compact">
 <ul>
 <li>Set <code>machine</code> to <code>mcp</code></li>
@@ -949,19 +972,18 @@ just to trigger some errors:</p>
 </ul>
 </div>
 <p>This is how the freshly ruined parts of our config should look like:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">blah</span>
-<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="na">no_such_config_param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">42</span>
-<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>
-<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">[dosbox]</span>
-<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mcp</span>
-<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>
-<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="k">[render]</span>
-<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">xcrt/aperture</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">[sdl]</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">blah</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="na">no_such_config_param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">42</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">[dosbox]</span>
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mcp</span>
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>
+<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="k">[render]</span>
+<a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">xcrt/aperture</span>
 </code></pre></div>
-<p>Restart DOSBox, and as expected, we’ll see some warnings and errors in the
-logs:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-logs2.png"><img alt="" loading="lazy" src="../images/pop-logs2.png"/></a></p>
+<p>As expected, we’ll see some warnings and errors in the logs after a restart:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png"><img alt="Example DOSBox logs showcasing warnings and errors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png"/></a></p>
 <p>Warnings are yellow, errors are red. Errors are generally reserved for more
 severe problems. In this example, we have the following:</p>
 <ul>
@@ -975,7 +997,7 @@ severe problems. In this example, we have the following:</p>
 </li>
 <li>
 <p>The third warning complains about an invalid <code>machine</code> value being used
-  (sorry to disappoint, but DOSBox can’t emulate the Master
+  (sorry to disappoint, but DOSBox Staging can’t emulate the Master
   Control Program from Tron yet!)</p>
 </li>
 <li>
@@ -987,14 +1009,15 @@ severe problems. In this example, we have the following:</p>
   pretty handy!</p>
 </li>
 </ul>
-<p>This is a common theme with the logs. When DOSBox display some warnings or
-errors, these messages often include suggestions and tips to help you resolve
-the issues. Note that these can appear not only at startup but also during
-running a game, depending on what DOSBox is currently doing.</p>
+<p>This is a common theme with the logs. When DOSBox Staging displays some
+warnings or errors, these messages often include suggestions and tips to help
+you resolve the issues. Note that these can appear not only at startup but
+also during running a game, depending on what DOSBox Staging is currently
+doing.</p>
 <p>While you might prefer to hide the log window for aesthetic reasons, it’s
-wiser to just let it be displayed so you can take a peek at it if something
-goes sideways. Without having access to the logs, your chances of fixing the
-problem are significantly reduced as basically you’re just stumbling in the
+wiser to just let it be so you can take a peek at it if something goes
+sideways. Without having access to the logs, your chances of fixing problems
+are significantly reduced as basically you would be just stumbling in the
 dark. You’ve been warned!</p>
 <hr/>
 <p>Okay, we’ve pretty much maxed out Prince of Persia for demonstration purposes.
@@ -1061,6 +1084,6 @@ Time to move on to another game!</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
 </html>

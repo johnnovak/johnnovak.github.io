@@ -637,10 +637,13 @@ figcaption {
 /* Documentation                                                            */
 /*--------------------------------------------------------------------------*/
 
-pre.dos-prompt {
+.md-typeset .dos-prompt pre>code {
   font: 1rem IBM VGA;
   background: #000;
   color: #aaa;
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+}
+
+.md-typeset .dos-prompt pre>code {
+    padding: 0.67rem 0.8rem 0.5rem 0.8rem;
 }
 

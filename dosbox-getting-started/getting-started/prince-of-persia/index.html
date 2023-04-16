@@ -11,9 +11,9 @@
 <link href="../introduction/" rel="prev"/>
 <link href="../enhancing-prince-of-persia/" rel="next"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>Setting up Prince of Persia - DOSBox Staging</title>
-<link href="../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -312,8 +312,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#starting-dosbox">
-    Starting DOSBox
+<a class="md-nav__link" href="#starting-dosbox-staging">
+    Starting DOSBox Staging
   </a>
 </li>
 <li class="md-nav__item">
@@ -428,8 +428,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#starting-dosbox">
-    Starting DOSBox
+<a class="md-nav__link" href="#starting-dosbox-staging">
+    Starting DOSBox Staging
   </a>
 </li>
 <li class="md-nav__item">
@@ -459,21 +459,21 @@
 <p>We will set up the demo version of <a href="https://www.mobygames.com/game/196/prince-of-persia/">Prince of
 Persia</a>, the classic
 cinematic platformer from 1990 as our first example. It was a landmark game,
-and it can still provide you with countless hours of entertainment if you like
+and it can still provide countless hours of entertainment if you like
 platformers that require you to exercise that pesky grey matter a bit too.</p>
-<p>First of all, we’ll create a new folder for storing all our DOS games. I’ll
+<p>First of all, we’ll create a new folder for storing all our DOS games. We’ll
 use <code>DOS Games</code> throughout this guide, but you can pick any name you like.
-It’s best to create this folder in your regular documents folder so DOSBox has
-full read and write access to it (don’t put it in a system folder, e.g.,
-<code>Program Files</code> on Windows). Each game will have its dedicated subfolder under
-<code>DOS Games</code>, so let’s create our first one called <code>Prince of Persia</code>.</p>
+It’s best to create this folder in your regular documents folder so DOSBox
+Staging has full read and write access to it (don’t put it in a system folder,
+e.g., <code>Program Files</code> on Windows). Each game will have its dedicated subfolder
+under <code>DOS Games</code>, so let’s create our first one called <code>Prince of Persia</code>.</p>
 <p>Now download
 <a href="https://www.dosgamesarchive.com/file/prince-of-persia/pop1">pop1.zip</a> from
 the <a href="https://www.dosgamesarchive.com/download/prince-of-persia">Prince of Persia demo
 page</a> and extract
-its contents into <code>DOS Games/Prince of Persia</code>. The archive contained only two
+its contents into <code>DOS Games/Prince of Persia</code>. The archive contains only two
 files: <code>pop1.txt</code> (a regular text file) and <code>pop1demo.exe</code> (an MS-DOS
-executable). Let’s open the text file in our text editor!</p>
+executable). Let’s open <code>pop1.txt</code> in our text editor!</p>
 <div class="highlight"><pre><span></span><code>It's like an Arabian Nights movie come to life... with you as the star!
 Leap into an exotic labyrinth of heart-stopping action, challenging mazes,
 intrigue and superb animation that's breathtakingly realistic!
@@ -490,11 +490,12 @@ setting up old DOS games is not all that dissimilar to solving adventure game
 puzzles. Getting past these puzzles requires some logical thinking, a little
 bit of background knowledge, and an element of trial and error is occasionally
 involved as well. Well, the user manual often helps too if you happen to own
-the original, or are able to procure a <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">scanned copy</a> online (most
-often you can).</p>
-<p>Luckily, this is an easy one: MS-DOS executables have the <code>exe</code> or <code>com</code> file
-extension, so looking at <code>pop1demo.exe</code> the solution is quite obvious: we’ll
-need to run this executable file in DOSBox!</p>
+the original, or can procure a <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">scanned copy</a> online (most often
+you can).</p>
+<p>Luckily, this is an easy one: executable files (programs or scripts you can
+start) under MS-DOS have the <code>.EXE</code>, <code>.COM</code> or <code>.BAT</code> file extension, so looking
+at <code>pop1demo.exe</code> the solution is quite obvious: we’ll need to run this
+executable file in DOSBox!</p>
 <h2 id="the-c-drive">The C drive<a class="headerlink" href="#the-c-drive" title="Permanent link">¶</a></h2>
 <p>Most DOS games need a hard drive as a <em>hard requirement</em> (okay, I’ll show
 myself to the door…), but DOSBox doesn’t have access to your computer’s hard
@@ -513,17 +514,17 @@ folder (technically, it does not make a difference if you use uppercase or
 lowercase <code>C</code> on Windows and macOS; Linux people should use lowercase <code>c</code>).
 We’ll then copy the files from the <code>pop1.zip</code> archive into <code>drives/c</code> to end
 up with the following folder structure:</p>
-<p><img alt="" class="skip-lightbox" src="../images/pop-tree1.png" style="width: 14.5rem; margin: 0.9rem calc(50% - 8.5rem);"/></p>
+<p><img alt="Prince of Persia folder structure" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/pop-tree1.png" style="width: 14.5rem; margin: 0.9rem calc(50% - 8.5rem);"/></p>
 <div class="admonition note">
 <p class="admonition-title">Origins of the C drive</p>
 <p>Have you ever wondered where the “C drive” in Windows got its name from?
-This is something Windows inherited from its MS-DOS heritage. In DOS, all
-drives are assigned letters from A to Z. Most computers of the era had two
-floppy drives, so letters A and B were reserved for them or other
-removable media, and the first hard drive partition was usually assigned
-to the letter C. We no longer have floppy drives in our computers as
-standard equipment, but this tradition stuck around for
-backwards-compatibility reasons.</p>
+This is something Windows inherited from its MS-DOS heritage (which in
+turn inherited it from CP/M). In DOS, all drives are assigned letters from
+A to Z. Most computers of the era had two floppy drives, so letters A and
+B were reserved for them or other removable media, and the first hard
+drive partition was usually assigned to the letter C. We no longer have
+floppy drives in our computers as standard equipment, but this tradition
+stuck around for backwards-compatibility reasons.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -534,10 +535,10 @@ they are completely separate concepts—DOSBox will <em>not</em> see the content
 of your real C drive by default (or the contents of any of your other
 drives, for that matter).</p>
 </div>
-<h2 id="starting-dosbox">Starting DOSBox<a class="headerlink" href="#starting-dosbox" title="Permanent link">¶</a></h2>
+<h2 id="starting-dosbox-staging">Starting DOSBox Staging<a class="headerlink" href="#starting-dosbox-staging" title="Permanent link">¶</a></h2>
 <p>Okay, with our C drive set up and ready to go, the next step is to start
-DOSBox from our <code>DOS Games/Prince of Persia</code> folder. This is accomplished
-slightly differently on each platform:</p>
+DOSBox Staging from our <code>DOS Games/Prince of Persia</code> folder. This is
+accomplished slightly differently on each platform:</p>
 <h3>Windows</h3>
 <div class="admonition warning first things first">
 <p class="admonition-title">Warning</p>
@@ -546,12 +547,12 @@ using the Start Menu shortcut of the desktop icon <a href="../../downloads/windo
 here</a>, otherwise
 the below instructions might not work.</p>
 </div>
-<p>If you have used the installer with the default options to set up DOSBox (and
-it’s highly recommended to do so while you’re still learning the ropes),
-simply right-click on the <code>Prince of Persia</code> folder in Windows Explorer and
-select the <em>Open with DOSBox Staging</em> in the context menu.</p>
-<p>Alternatively, you can enter the folder, right-click anywhere on the blank area inside
-the folder, then select <em>Open with DOSBox Staging</em> in the context menu.</p>
+<p>If you have used the installer with the default options to set up DOSBox
+Staging (and it’s highly recommended to do so while you’re still learning the
+ropes), simply right-click on the <code>Prince of Persia</code> folder in Windows
+Explorer and select the <em>Open with DOSBox Staging</em> in the context menu.</p>
+<p>Alternatively, you can enter the folder, right-click anywhere on the blank
+area inside it, then select <em>Open with DOSBox Staging</em> in the context menu.</p>
 <h3>macOS</h3>
 <div class="admonition warning first things first">
 <p class="admonition-title">Warning</p>
@@ -561,7 +562,7 @@ here</a>, otherwise the below
 instructions won’t work.</p>
 </div>
 <ol>
-<li>Mount the DOSBox installer <code>.dmg</code> image file.</li>
+<li>Mount the DOSBox Staging installer <code>.dmg</code> image file.</li>
 <li>Copy the <em>Start DOSBox Staging</em> icon from the appearing window into the
    <code>Prince of Persia</code> folder.</li>
 <li>Right-click or <span class="keys"><kbd class="key-control">Ctrl</kbd></span>-click the icon, then select the topmost
@@ -569,8 +570,8 @@ instructions won’t work.</p>
 <li>A dialog with the following text will appear: <em>macOS cannot verify the
    developer of “Start DOSBox Staging”. Are you sure you want to open it?</em></li>
 <li>Press the <em>Open</em> button.</li>
-<li>A dialog will open, asking for permission to allow DOSBox access your
-   Documents folder. Click on the <em>OK</em> button.</li>
+<li>A dialog will open, asking for permission to allow DOSBox Staging access
+   your Documents folder. Click on the <em>OK</em> button.</li>
 </ol>
 <p>You only need to perform this procedure once when opening the <em>Start DOSBox
 Staging</em> icon for the first time. After the first launch, you can use it like
@@ -578,8 +579,9 @@ any other regular icon.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To avoid having to repeat these steps whenever you set up a new game, copy
-an icon on which you have performed this initial procedure already, rather
-than keep copying the original one from the <code>.dmg</code> file.</p>
+an icon on which you have already performed this initial procedure into
+your new game folder, rather than copying the original one from the <code>.dmg</code>
+file.</p>
 </div>
 <h3>Linux</h3>
 <p>Open your favourite terminal, <code>cd</code> into the <code>Prince of Persia</code> directory, then
@@ -599,18 +601,17 @@ executes the following command:</p>
 <p><code>&lt;PATH&gt;</code> is the absolute path of your game directory (<code>Prince of Persia</code> in
 this case).</p>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
-<p>You’ll be greeted by the following window when starting DOSBox:</p>
+<p>You’ll be greeted by the following window when starting DOSBox Staging:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dosbox-start.png"><img alt="" loading="lazy" src="../images/dosbox-start.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dosbox-start.png"><img alt="DOSBox start screen" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dosbox-start.png"/></a></p>
 </figure>
 <p>Let’s ignore the polite welcome message for now and focus on the text below
-the blue banner.</p>
-<pre class="dos-prompt">
-Local directory drives/c/ mounted as C drive
-Z:\&gt;_
-</pre>
+the big blue rectangle:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Local directory drives/c/ mounted as C drive
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>Z:\&gt;_
+</code></pre></div>
 <p>The first line is pretty straightforward—it tells us that DOSBox mounted
-<code>drives/C</code> we created earlier as the C drive.</p>
+<code>drives/c</code> we created earlier as the “C drive”.</p>
 <p>The second line is the DOS prompt. DOS has a command line interface that
 predates graphical user interfaces we’re accustomed to from modern operating
 systems. We get DOS to do things by typing in commands, and if manage to do
@@ -629,98 +630,113 @@ is—guess what?—the cursor.</p>
 <p>Okay, enough theory, type in <code>C:</code> and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to switch
 to the C drive. The prompt should now reflect that we’re in the root directory
 of the C drive:</p>
-<pre class="dos-prompt">
-Z:\&gt;c:
-C:\&gt;_
-</pre>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>Z:\&gt;c:
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>C:\&gt;_
+</code></pre></div>
 <p>Type in <code>dir</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to list the contents of the current
 directory:</p>
-<pre class="dos-prompt">
-C:\&gt;dir
- Volume in drive C is CDRIVE
- Directory of C:\
-
-POP1     TXT                     362 07/07/1995 10:12a
-POP1DEMO EXE                 267,420 07/05/1995  9:53a
-                4 file(s)               268,116 bytes
-                0 dir(s)            262,144,000 bytes free
-C:\&gt;_
-</pre>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\&gt;dir
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a> Volume in drive C is CDRIVE
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a> Directory of C:\
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>POP1     TXT                     362 07/07/1995 10:12a
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>POP1DEMO EXE                 267,420 07/05/1995  9:53a
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>                2 file(s)               268,116 bytes
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>                0 dir(s)            262,144,000 bytes free
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>C:\&gt;_
+</code></pre></div>
 <p>Well, that’s what we put into our virtual C drive, so nothing too spectacular
-so far. We’ll execute <code>pop1demo.exe</code> next! Type in <code>pop</code> and press the
-<span class="keys"><kbd class="key-tab">Tab</kbd></span> once to instruct DOSBox to complete the filename for you.
-This handy feature is called <em>tab completion</em> and it saves you from a lot of
-typing! Press <span class="keys"><kbd class="key-tab">Tab</kbd></span> a few more times and observe how it alternates
-between <code>POP1.TXT</code> and <code>POP1DEMO.EXE</code>; this makes sense as these are the only
-two files in the current directory that start with <code>pop</code>.</p>
+so far. We’ll execute <code>pop1demo.exe</code> next! Type in <code>pop</code> and press the <span class="keys"><kbd class="key-tab">Tab</kbd></span>
+key once to instruct DOSBox to complete the filename for you. This handy
+feature is called <em>tab completion</em> and it saves you from a lot of typing!
+Press <span class="keys"><kbd class="key-tab">Tab</kbd></span> a few more times and observe how it alternates between
+<code>POP1.TXT</code> and <code>POP1DEMO.EXE</code>; this makes sense as these are the only two
+files in the current directory that start with <code>pop</code>.</p>
 <p>Okay, let’s make sure <code>POP1DEMO.EXE</code> is displayed in the prompt then press
 <span class="keys"><kbd class="key-enter">Enter</kbd></span> to run this executable file. It turns out this is a
 self-extracting archive that unpacks its contents into the current directory
 when you run it. The following will appear (I’ve redacted the list of
 extracted files):</p>
-<pre class="dos-prompt">
-C:\&gt;POP1DEMO.EXE
-
-PKSFX (R)   FAST!   Self Extract Utility   Version 2.04g  02-01-93
-Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Shareware version
-PKSFX Reg. U.S. Pat. and Tm. Off.
-
-Searching EXE: C:/POP1DEMO.EXE
-  Inflating: CDUNGEON.DAT
-  Inflating: DIGISND1.DAT
-
-  ...
-
-  Inflating: PRINCE.EXE
-
-C:\&gt;_
-</pre>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\&gt;POP1DEMO.EXE
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>PKSFX (R)   FAST!   Self Extract Utility   Version 2.04g  02-01-93
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Shareware version
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>PKSFX Reg. U.S. Pat. and Tm. Off.
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>Searching EXE: C:/POP1DEMO.EXE
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>  Inflating: CDUNGEON.DAT
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>  Inflating: DIGISND1.DAT
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>  ...
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>  Inflating: PRINCE.EXE
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>C:\&gt;_
+</code></pre></div>
 <p>The more observant among you might have noticed the last entry, <code>PRINCE.EXE</code>.
 Bingo, that’s our game executable! But let’s pretend we haven’t spotted it;
 how do we find all executables in the current directory? By issuing the <code>dir</code>
 command with the <code>*.exe</code> wildcard search pattern!</p>
-<p>But instead of typing in the command, press <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> a few times until <code>dir</code>
+<p>But instead of typing in <code>dir *.exe</code>, press <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> a few times until <code>dir</code>
 appears in the command line, then type in the rest (<span class="keys"><kbd class="key-space">Space</kbd></span> character
 followed by <code>*.exe</code>). This handy feature is called <em>command history</em>—you can
 move forward and backward in the list of previously executed commands with the <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>
 and <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> keys, respectively.</p>
 <p>Okay, so here’s how the output looks like:</p>
-<pre class="dos-prompt">
-C:\&gt;dir *.exe
- Volume in drive C is CDRIVE
- Directory of C:\
-
-POP1DEMO EXE                 267,420 07/05/1995  9:53a
-PRINCE   EXE                 123,335 03/29/1990  0:00a
-                2 file(s)               390,755 bytes
-                0 dir(s)            262,144,000 bytes free
-C:\&gt;_
-</pre>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>C:\&gt;dir *.exe
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a> Volume in drive C is CDRIVE
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a> Directory of C:\
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>POP1DEMO EXE                 267,420 07/05/1995  9:53a
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>PRINCE   EXE                 123,335 03/29/1990  0:00a
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>                2 file(s)               390,755 bytes
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>                0 dir(s)            262,144,000 bytes free
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>C:\&gt;_
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Alternatively, you can use the <code>ls</code> command that displays the directory
+contents in a wide list format. This command highlights executable files
+in green (<code>.EXE</code>, <code>.COM</code>, and <code>.BAT</code> file extensions) and directories
+(folders) in blue.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">FAT filesystem</p>
+<p>MS-DOS uses the <em>FAT filesystem</em> that allows up to 8-character filenames,
+followed optionally by a file extension consisting of a dot and at most
+three further characters. Filenames can only contain uppercase letters,
+digits, and certain special characters, such as the dash (<code>-</code>), underscore
+(<code>_</code>), and the exclamation mark (<code>!</code>).</p>
+<p>The two files we originally copied to our <code>drives/c</code> folder had all
+lowercase filenames (<code>pop1.txt</code> and <code>pop1demo.exe</code>). This does not matter
+as DOSBox automatically converts all filenames in our <code>drives/c</code> folder to
+uppercase behind the scenes.</p>
+</div>
 <h2 id="starting-the-game">Starting the game<a class="headerlink" href="#starting-the-game" title="Permanent link">¶</a></h2>
 <p>There’s nothing else left to do than to start <code>PRINCE.EXE</code> (type in the letter
-<code>P</code>, press <span class="keys"><kbd class="key-tab">Tab</kbd></span> to auto-complete it to <code>PRINCE.EXE</code>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span>).
-After a short loading time, the title screen will appear and you’ll hear the
+<code>p</code>, press <span class="keys"><kbd class="key-tab">Tab</kbd></span> to auto-complete it to <code>PRINCE.EXE</code>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span>).
+After a short loading, the title screen will appear and you’ll hear the
 classic Prince of Persia intro music playing! Don’t press any key yet, just
 wait and watch the intro sequence until the end to learn about the game’s
 backstory.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-title.png"><img alt="Prince of Persia title screen" loading="lazy" src="../images/pop-title.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png"><img alt="Prince of Persia -- Title screen" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png"/></a></p>
 <figcaption>
-<p>Prince of Persia title screen
+<p>Prince of Persia — Title screen
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-intro.png"><img alt="A scene from the intro sequence" loading="lazy" src="../images/pop-intro.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png"><img alt="Prince of Persia -- Scene from the intro sequence" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png"/></a></p>
 <figcaption>
-<p>A scene from the intro sequence
+<p>Prince of Persia — Scene from the intro sequence
   </p>
 </figcaption>
 </figure>
 </div>
 <p>If you keep watching, the game will enter demo mode, where the protagonist
-will soon meet his untimely death… Surely we can do better than that! Press
+will soon meet his untimely death… Surely, we can do better than that! Press
 any key to start the game!</p>
 <p>You control the prince with the cursor keys, and you can walk carefully by
 holding the <span class="keys"><kbd class="key-shift">Shift</kbd></span> key. It’s not that hard to figure out the various
@@ -730,15 +746,15 @@ manual</a>
 should definitely help. The manual also contains helpful hints and a full list
 of keyboard shortcuts you can use during the game.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="../images/pop-vga.png" width="88%"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png" width="88%"/></a></p>
 <figcaption>
 <p>This is where the adventure starts!
   </p>
 </figcaption>
 </figure>
-<p>Congratulations, you’ve got your very first DOS game running in DOSBox! Have
-some fun, try to find the sword and overcome a few guards, maybe even attempt
-to fully complete the first level.</p>
+<p>Congratulations, you’ve got your very first DOS game running in DOSBox
+Staging! Have some fun, try to find the sword and overcome a few guards, and
+maybe even attempt to complete the first level.</p>
 <p>You can quit the game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> which will return you to the DOS
 prompt. There you can use the <code>exit</code> command to close DOSBox. Of course, you
 can quit DOSBox any time by pressing <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> on Windows and Linux, or
@@ -753,28 +769,28 @@ exiting to DOS, or perhaps none at all.</p>
 <p class="admonition-title">How to approach old games</p>
 <p>If you’ve only ever played modern games, you’re probably in for a bit of a
 culture shock! There’s minimal to no handholding in most DOS games from
-the 1980s and the 90s, you are expected to read the user manual, often
+the 1980s and the 90s; you are expected to read the user manual, often
 there is no in-game tutorial, and the games are generally unforgiving and
 require a level of dedication from the player that’s uncommon in more
 modern titles.</p>
 <p>However, this does not mean that these games are less fun, on the
-contrary! The old adage “you get what you put in” is certainly true for
-old DOS games. Many people (including the author of this present article)
-think that the satisfaction and enjoyment you get when mastering such
-difficult games have few parallels in the modern gaming landscape.</p>
+contrary! The old adage “you get out what you put in” is certainly true
+for old DOS games. Many people (including the author of this present
+article) think that the satisfaction and enjoyment you get when mastering
+such difficult games have few parallels in the modern gaming landscape.</p>
 </div>
 <h2 id="auto-executing-commands-at-startup">Auto-executing commands at startup<a class="headerlink" href="#auto-executing-commands-at-startup" title="Permanent link">¶</a></h2>
 <p>Every time we want to play the game, we need to type in DOS commands to switch
-to the <code>C</code> drive and run <code>prince.exe</code> from there. Isn’t there a way to
+to the C drive and run <code>PRINCE.EXE</code> from there. Isn’t there a way to
 automate this?</p>
 <p>There certainly is! We need to create a so-called
 <em>configuration file</em> that can contain various settings to customise the
 behaviour of DOSBox, along with a list of commands to auto-execute at startup.</p>
 <p>Launch your text editor of choice and create a new plain text file called
 <code>dosbox.conf</code> inside the <code>Prince of Persia</code> folder with the following content:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[autoexec]</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">c</span><span class="o">:</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="na">prince</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="na">prince</span>
 </code></pre></div>
 <p>The commands you want to be executed right after startup should be listed in
 the aptly titled <code>[autoexec]</code> configuration section, each command in a
@@ -782,23 +798,44 @@ separate line. Configuration sections are introduced by names enclosed in square
 brackets; everything that follows belongs to that section.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Some text editors insist on using appending the <code>.txt</code> extension after the
+<p>Some text editors insist on appending the <code>.txt</code> extension after the
 filename you enter in their save dialog. This might result in creating a
 file called <code>dosbox.conf.txt</code> which won’t work. Get to know your text
-editor and make sure you save the configuration file as <code>dosbox.conf</code>.</p>
+editor and make sure you save the configuration file as <code>dosbox.conf</code></p>
 </div>
 <p>When DOSBox starts, it looks for this special <code>dosbox.conf</code> file in the folder
 it was started from, and if it finds it, it configures the DOS environment and
 DOSBox itself according to its contents. This is handy because we can put a
 different configuration file into each of our game folders to set them up
-differently.</p>
+differently (this is necessary; it’s simply impossible to create a single
+configuration that would work with all DOS games).</p>
 <p>Just to make everything absolutely clear, this is the folder structure we
-should have at this point:</p>
-<p><img alt="" class="skip-lightbox" src="../images/pop-tree2.png" style="width: 14.5rem; margin: 0.9rem calc(50% - 8.5rem);"/></p>
-<p>Starting up DOSBox from the <code>Prince of Persia</code> folder should now launch the
+should have at this point (only the first four files are shown in <code>drives/c</code>
+to save space):</p>
+<p><img alt="Prince of Persia folder structure showcasing the location of the 'dosbox.conf' file" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/pop-tree2.png" style="width: 14.5rem; margin: 0.9rem calc(50% - 8.5rem);"/></p>
+<p>Starting up DOSBox Staging from the <code>Prince of Persia</code> folder should now launch the
 game right away without any manual intervention!</p>
 <p>So far so good—now let’s see how we can use the advanced features offered by
 DOSBox Staging to our advantage!</p>
+<div class="admonition info">
+<p class="admonition-title">DOSBox vs DOSBox Staging</p>
+<p>Astute readers might have noticed that the guide sometimes refers to
+“DOSBox Staging” and sometimes to just “DOSBox”. Why is that?</p>
+<p>As explained on our <a href="../../about/">about page</a>, DOSBox Staging is a
+modern continuation of the original DOSBox project. Technically, DOSBox
+Staging is an open-source fork of and separate project from the
+SourceForge-hosted DOSBox project.</p>
+<p>Generally, we use “DOSBox Staging” when we discuss features specific to
+Staging, or when we talk about the DOSBox Staging application, installer,
+or process itself. But when mentioning base functionality present in the
+original DOSBox and pretty much all other DOSBox variants, we simply write
+“DOSBox”. Admittedly, sometimes the distinction gets rather blurry, and
+seeing “DOSBox Staging” fully typed out everywhere would get old rather
+quickly!</p>
+<p>Using the term “DOSBox” is also a nod to the original DOSBox developers to
+whom we are grateful for starting this awesome open-source project in the
+first place!</p>
+</div>
 </article>
 </div>
 </div>
@@ -861,6 +898,6 @@ DOSBox Staging to our advantage!</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
 </html>
