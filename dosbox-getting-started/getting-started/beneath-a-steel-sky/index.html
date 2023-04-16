@@ -765,8 +765,8 @@ something to do with the <code>cd</code> subfolder where we put out CD-ROM image
 perhaps?</p>
 <p>No, that’s just a coincidence. The <code>cd</code> command stands for Change Directory;
 it is used to change the current directory that’s displayed as part of the
-DOS prompt. So let’s analyse what these lines we put into the <code>[autoexec]</code> section
-do:</p>
+DOS prompt. So let’s analyse what these lines we put into the <code>[autoexec]</code>
+section do:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>c:
 <a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>cd \sky
 </code></pre></div>
@@ -931,14 +931,15 @@ game then?</p>
 It won’t hurt too much, I promise!</p>
 <h3 id="real-and-protected-mode">Real and protected mode<a class="headerlink" href="#real-and-protected-mode" title="Permanent link">¶</a></h3>
 <p>DOS games can be divided into two categories: older games, and newer games
-(who would’ve guessed?) Older games released before about 1993 use something called
-<em>real mode</em>, while newer games released from 1993 onwards use <em>protected mode</em>.
-The important distinction here is that most CPU-hungry games are protected
-mode games (e.g., FPS games and flight simulators), while older pre-1993 real mode games
-generally have much less demanding performance requirements. Figuring out what
-exact CPU speed a particular game needs is almost impossible at the emulator level,
-but detecting whether a game uses real or protected mode is trivial.
-Therefore, DOSBox does the following automatic speed calibration by default:</p>
+(who would’ve guessed?) Older games released before about 1993 use something
+called <em>real mode</em>, while newer games released from 1993 onwards use
+<em>protected mode</em>. The important distinction here is that most CPU-hungry games
+are protected mode games (e.g., FPS games and flight simulators), while older
+pre-1993 real mode games generally have much less demanding performance
+requirements. Figuring out what exact CPU speed a particular game needs is
+almost impossible at the emulator level, but detecting whether a game uses
+real or protected mode is trivial. Therefore, DOSBox does the following
+automatic speed calibration by default:</p>
 <ul>
 <li>
 <p>For real mode games, it defaults to emulating 3000 CPU instructions
@@ -984,8 +985,8 @@ mode.</p>
 emulate the time-critical audio output without stuttering and glitches. The
 solution is kind of obvious: instead of letting DOSBox run amok with the CPU
 emulation, we’ll restrict it to a reasonable speed.</p>
-<p>We do that by specifying the number of CPU instructions, or cycles, to emulate per
-millisecond with the following config snippet:</p>
+<p>We do that by specifying the number of CPU instructions, or cycles, to emulate
+per millisecond with the following config snippet:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">[cpu]</span>
 <a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">12000</span>
 </code></pre></div>
@@ -995,11 +996,12 @@ are now gone! Well done, time for a beer (or your beverage of choice)!
 <div class="admonition info">
 <p class="admonition-title">Real and protected mode</p>
 <p>In very simple terms, <em>real mode</em> is a programming model that uses the
-legacy 16-bit mode of an Intel 386 or later CPU, while <em>protected mode</em> takes
-full advantage of its capabilities and runs in 32-bit mode. Protected mode is
-the real deal, but it couldn’t be universally utilised until 386 or better
-CPUs had gained widespread adoption. That happened around the year 1993; games released
-from thereon use protected mode almost exclusively.</p>
+legacy 16-bit mode of an Intel 386 or later CPU, while <em>protected mode</em>
+takes full advantage of its capabilities and runs in 32-bit mode.
+Protected mode is the real deal, but it couldn’t be universally utilised
+until 386 or better CPUs had gained widespread adoption. That happened
+around the year 1993; games released from thereon use protected mode
+almost exclusively.</p>
 <p>You can easily spot protected mode games by the presence of so-called <a href="https://en.wikipedia.org/wiki/DOS_extender">DOS
 extenders</a> in their main game
 directories. <code>DOS4GW.EXE</code>, <code>PMODEW.EXE</code>, and <code>CWSDPMI.EXE</code> were the most
@@ -1010,15 +1012,15 @@ with 100% accuracy whether a game runs in real or protected mode. Just set
 while running the game.</p>
 </div>
 <h3 id="finding-the-correct-speed-for-a-game">Finding the correct speed for a game<a class="headerlink" href="#finding-the-correct-speed-for-a-game" title="Permanent link">¶</a></h3>
-<p>Ok, so why 12 000 and not any other number? The game’s manual states that a 386
-or better processor is required. Indeed, the game works fine at 6000 cycles
-which approximates a 386DX CPU running at 33 MHz, but the loading times are a
-bit on the slow side. Setting cycles to 12 000—which roughly corresponds to a
-486DX2/66 with “turbo mode” off, running at 33 MHz—speeds up the loading
-considerably while not causing any negative side effects. This is not
-surprising as the DX2/66 was one of the most popular CPUs in the 1990s for
-gaming. This is what <a href="https://en.wikipedia.org/wiki/Intel_DX2#:~:text=The%20i486DX2%2D66,performance%20and%20longevity.">Wikipedia says about
-it</a>:</p>
+<p>Ok, so why 12 000 and not any other number? The game’s manual states
+that a 386 or better processor is required. Indeed, the game works fine at
+6000 cycles which approximates a 386DX CPU running at 33 MHz, but the loading
+times are a bit on the slow side. Setting cycles to 12 000—which
+roughly corresponds to a 486DX2/66 with “turbo mode” off, running at 33
+MHz—speeds up the loading considerably while not causing any negative side
+effects. This is not surprising as the DX2/66 was one of the most popular CPUs
+in the 1990s for gaming. This is what
+<a href="https://en.wikipedia.org/wiki/Intel_DX2#:~:text=The%20i486DX2%2D66,performance%20and%20longevity.">Wikipedia says about it</a>:</p>
 <blockquote>
 <p>The i486DX2-66 was a very popular processor for video game enthusiasts in
 the early to mid-90s. Often coupled with 4 to 8 MB of RAM and a VLB video
@@ -1128,9 +1130,9 @@ sound cards were capable of. They were the Cadillacs of DOS gaming audio for a
 while, and they still sound pretty good even by today’s standards.</p>
 <p>DOSBox Staging can emulate all common variants of the MT-32 family, but it
 requires ROM dumps of the original hardware devices to do so. So first we need
-to download these ROMs <a href="https://archive.org/details/Roland-MT-32-ROMs">from here</a>
-as a ZIP package, then copy the contents of the archive into our designated
-MT‑32 ROM folder:</p>
+to download these ROMs <a href="https://archive.org/details/Roland-MT-32-ROMs">from
+here</a> as a ZIP package, then
+copy the contents of the archive into our designated MT‑32 ROM folder:</p>
 <div class="compact">
 <table>
 <thead>
@@ -1190,11 +1192,10 @@ following into your config:</p>
 <a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="k">[mt32]</span>
 <a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="na">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cm32l</span>
 </code></pre></div>
-<p>How do you figure out which MT-32 model to use for a particular game? Well, you
-can’t do that easily without a lot of research and trial and error, but thanks
-to the tireless work of certain prestigious individuals, you can simply refer
-to the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">list of MT-32-compatible computer
-games</a>
+<p>How do you figure out which MT-32 model to use for a particular game? Well,
+you can’t do that easily without a lot of research and trial and error, but
+thanks to the tireless work of certain prestigious individuals, you can simply
+refer to the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">list of MT-32-compatible computer games</a>
 that tells you the correct model to use for most well-known games.</p>
 <p>Let’s consult the list and see what it says about Beneath a Steel Sky!</p>
 <blockquote>
@@ -1269,8 +1270,8 @@ appear vertically stretched on-screen. In fact, they appear exactly 20% taller
 than they should, which means the artwork was scanned using square pixels,
 then the stretching happens because of the 1:1.2 pixel aspect ratio of the
 320×200 VGA screen mode (you might want to revisit the
-<a href="../enhancing-prince-of-persia/#custom-viewport-resolution">detailed explanation</a>
-to refresh your memory).</p>
+<a href="../enhancing-prince-of-persia/#custom-viewport-resolution">detailed explanation</a> to
+refresh your memory).</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-beneath-a-steel-sky-aspect/bass-aspect.jpg"><img alt="Left: Screenshot from the intro with aspect ratio correction disabled (square pixels), Right: The original image from the comic book included with the game" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-beneath-a-steel-sky-aspect/bass-aspect.jpg" width="90%"/></a></p>
 <figcaption>
@@ -1342,7 +1343,10 @@ almost always the correct answer.</p>
 </ul>
 <p>Here’s a non-exclusive list of the most important Amiga-first European
 studios:</p>
-<p><em>Bitmap Brothers, Bullfrog, Coktel Vision, Core Design, DMA Design, Delphine, Digital Illusions, Firebird, Horror Soft / Adventure Soft, Infogrames, Level 9, Magnetic Scrolls, Ocean, Psygnosis, Revolution, Sensible Software, Silmarils, Team 17, Thalamus, Thalion, Ubisoft</em></p>
+<p><em>Bitmap Brothers, Bullfrog, Coktel Vision, Core Design, DMA Design, Delphine,
+Digital Illusions, Firebird, Horror Soft / Adventure Soft, Infogrames, Level
+9, Magnetic Scrolls, Ocean, Psygnosis, Revolution, Sensible Software,
+Silmarils, Team 17, Thalamus, Thalion, Ubisoft</em></p>
 <div class="admonition info">
 <p class="admonition-title">From squares to rectangles</p>
 <p>For the vast majority of computer games from the 80s and 90s featuring 2D

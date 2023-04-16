@@ -548,10 +548,10 @@
 LucasArts point-and-click adventure games:
 <a href="https://www.mobygames.com/game/534/indiana-jones-and-the-last-crusade-the-graphic-adventure/">Indiana Jones and the Last Crusade</a>,
 <a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island</a>,
-and <a href="https://www.mobygames.com/game/176/loom/">Loom</a>. These were the blockbusters
-of the adventure gaming genre back in the day, and they still offer countless
-hours of fun if you like puzzle-solving and well-written, intriguing
-storylines.</p>
+and <a href="https://www.mobygames.com/game/176/loom/">Loom</a>. These were the
+blockbusters of the adventure gaming genre back in the day, and they still
+offer countless hours of fun if you like puzzle-solving and well-written,
+intriguing storylines.</p>
 <p>But before we begin, let’s discuss something fundamental to DOSBox Staging!</p>
 <h2 id="default-configuration">Default configuration<a class="headerlink" href="#default-configuration" title="Permanent link">¶</a></h2>
 <p>Have you wondered how do you learn about all the available configuration
@@ -597,16 +597,6 @@ with their default values, plus a short explanatory text for each.</p>
  visible, go to your home folder in Finder, press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-j">J</kbd></span> to bring up
  the view options dialog, and then check <em>Show Library Folder</em>.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">SteamOS notes</p>
-<p>The global configuration is written to the following location on
-the first run:</p>
-<p><code>/home/deck/.var/app/io.github.dosbox-staging/config/dosbox/dosbox-staging.conf</code></p>
-<p>This will get deleted the next time you update the DOSBox Staging Flatpak,
-so it’s recommended to create the <code>/home/deck/.dosbox/</code> directory and move
-the default <code>dosbox-staging.conf</code> file there. This config location always
-takes precedence over the one inside the Flatpak.</p>
-</div>
 <p>If you know the exact name of a configuration setting, you can display its
 explanatory text using the built-in <code>config</code> command. The invocation is
 <code>config -h</code> followed by a space and the setting’s name. For example:</p>
@@ -622,8 +612,8 @@ the <code>dosbox.conf</code> configuration found in the folder it was started fr
 game’s folder), overriding certain default settings.</p>
 <p>This <em>layered configuration</em> approach is very useful; you can apply broad,
 general settings in your default <em>global configuration</em> that will apply to all
-games, then fine-tune these defaults on a per-game basis via <em>local <code>dosbox.conf</code>
-configurations</em> in the individual game folders.</p>
+games, then fine-tune these defaults on a per-game basis via <em>local
+<code>dosbox.conf</code> configurations</em> in the individual game folders.</p>
 <p>As DOSBox Staging comes with sensible defaults, you can keep these local
 configurations quite minimal, as we’ve already seen. There’s absolutely no
 need to specify every single setting in your local game-specific config—that
@@ -641,9 +631,9 @@ settings (e.g., sample rate and buffer sizes). We’ll examine these later.</p>
 </div>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
 <p>Ok, so let’s create the subfolder for our second game then! Create another
-folder in <code>DOS Games</code> next to <code>Prince of Persia</code> and name it
-<code>Passport to Adventure</code>. Create the <code>drives</code> subfolder in it and the <code>c</code>
-subfolder in the <code>drives</code> folder.</p>
+folder in <code>DOS Games</code> next to <code>Prince of Persia</code> and name it <code>Passport to
+Adventure</code>. Create the <code>drives</code> subfolder in it and the <code>c</code> subfolder in the
+<code>drives</code> folder.</p>
 <p>Download the <a href="https://archive.org/download/PassportToAdventure/PassportToAdventuredemo1990lucasartsadventureCompilation.zip">ZIP archive</a>
 from the <a href="https://archive.org/details/PassportToAdventure">Passport of Adventure</a> item at the
 Internet Archive, then extract its contents into the <code>c</code> subfolder.</p>
@@ -725,8 +715,8 @@ options next!</p>
 <h3 id="sound-blaster-adlib-sound">Sound Blaster / AdLib sound<a class="headerlink" href="#sound-blaster-adlib-sound" title="Permanent link">¶</a></h3>
 <p>The game managed to auto-detect our emulated Sound Blaster card, so what we’re
 hearing during the intro is AdLib music.</p>
-<p><em>“Whoa, let me stop you right there, dude! You said Sound Blaster, so what’s this
-AdLib thing now?!”</em></p>
+<p><em>“Whoa, let me stop you right there, dude! You said Sound Blaster, so what’s
+this AdLib thing now?!”</em></p>
 <p>Okay, we’ll need to understand a few technical details again. Most Sound
 Blaster cards support at least two sound generation mechanisms:</p>
 <ul>
@@ -780,9 +770,9 @@ utility.</p>
 <li>
 <p><strong>AdLib</strong> was an early sound card predating Sound Blasters that featured
     the same OPL chip. Perfect AdLib compatibility was one of the Sound
-    Blasters’ main selling points, therefore in games that support both AdLib
-    and Sound Blaster for synthesised sound, both options will usually yield
-    the exact same results.</p>
+    Blasters’ main selling points, therefore in games that support both
+    AdLib and Sound Blaster for synthesised sound, both options will
+    usually yield the exact same results.</p>
 <p>The AdLib card, however, had no support for digital audio, so it’s
 preferable to pick the Sound Blaster option if the game offers both—
 you might also get digital speech and sound effects that way.</p>
@@ -864,9 +854,8 @@ the Tandy line of home computers that were mostly compatible with the standard
 PCs but also offered improved sound and graphics capabilities. Developers had
 to specifically support the Tandy to take advantage of these features. There
 are relatively few such games, but they are worth seeking out as they provide
-a better experience, especially in the sound department. The <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-Tandy-&amp;-PCjr-exclusive-graphics-and-sound">Games with Tandy
-&amp; PCjr exclusive graphics and
-sound</a>
+a better experience, especially in the sound department. The
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-Tandy-&amp;-PCjr-exclusive-graphics-and-sound">Games with Tandy &amp; PCjr exclusive graphics and sound</a>
 list on our wiki should help you find these pre-1990 Tandy specials.</p>
 <p>DOSBox can emulate a Tandy machine; we only need to instruct it to do so in
 our config:</p>
@@ -875,10 +864,10 @@ our config:</p>
 </code></pre></div>
 <p>Emulating the Tandy will cause the standard DOS font to be a bit different;
 this is normal, don’t be alarmed by it.</p>
-<p>After a restart, we’re finally hearing different synthesised music which 
-sounds definitely better than the PC speaker rendition, but not as good as the OPL
-music. Interestingly, the Tandy music plays a little bit faster than the other
-options.</p>
+<p>After a restart, we’re finally hearing different synthesised music which
+sounds definitely better than the PC speaker rendition, but not as good as the
+OPL music. Interestingly, the Tandy music plays a little bit faster than the
+other options.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you started <code>SAMPLER.EXE</code> without providing the <code>ts</code> argument to

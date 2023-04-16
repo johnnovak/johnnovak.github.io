@@ -558,9 +558,9 @@ start the game without manual intervention:</p>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="na">demo</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="na">exit</span>
 </code></pre></div>
-<p>The first <code>-w 0.5</code> argument of the <code>autotype</code> command specifies an initial 0.5 second wait
-time before the “auto-typing” begins. This is followed by the <code>1</code> argument
-which will simulate pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
+<p>The first <code>-w 0.5</code> argument of the <code>autotype</code> command specifies an initial 0.5
+second wait time before the “auto-typing” begins. This is followed by the <code>1</code>
+argument which will simulate pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
 <p>That’s it! It’s a simple but very useful feature. Run <code>autotype /?</code> to see the
 full list of available options and check out the list of <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE
 candidates</a>
@@ -653,8 +653,8 @@ technique is still very practical.</p>
 </div>
 <h2 id="vertical-syncing">Vertical syncing<a class="headerlink" href="#vertical-syncing" title="Permanent link">¶</a></h2>
 <p>Dark Forces synchronises its screen updates to the refresh rate of the
-emulated VGA card, which is always 70 Hz. This is hardcoded behaviour that cannot be
-disabled in the game’s configuration.</p>
+emulated VGA card, which is always 70 Hz. This is hardcoded behaviour that
+cannot be disabled in the game’s configuration.</p>
 <p>DOSBox Staging itself also uses vertical syncing by default to synchronise
 updating the emulated image to the vertical refresh rate of your physical
 monitor. Without DOSBox-level vsync, fast-paced games such as this one would
@@ -729,8 +729,8 @@ startup, which means this is a
 </code></pre></div>
 <p>As we’ve learnt, protected mode games default to using all available CPU
 power. While this will most likely help achieve a stable 70 FPS (if your
-computer is powerful enough), running the CPU at maximum speed could starve the
-audio emulation, leading to audible glitches, clicks, and pops.</p>
+computer is powerful enough), running the CPU at maximum speed could starve
+the audio emulation, leading to audible glitches, clicks, and pops.</p>
 <p>To avoid such issues, it’s much preferable to emulate a CPU that is
 powerful enough to handle 70 FPS but not more. One way to come up with a good
 cycles number is to start the game with a relatively low cycles setting, say
@@ -890,12 +890,10 @@ realistic the General MIDI rendition of this orchestral piece sounds compared
 to the OPL synth.</p>
 <p>Of course, you can always try other GM or GS compatible SoundFonts
 too—that’s the beauty of General MIDI!
-<a href="https://musical-artifacts.com/artifacts/749">FluidR3_GS</a> and <a href="https://archive.org/download/free-soundfonts-sf2-2019-04/Creative%20Labs%204M%20GM_4gmgsmt.sf2">Creative Labs
-4M
-GM_4gmgsmt</a>
+<a href="https://musical-artifacts.com/artifacts/749">FluidR3_GS</a> and
+<a href="https://archive.org/download/free-soundfonts-sf2-2019-04/Creative%20Labs%204M%20GM_4gmgsmt.sf2">Creative Labs 4M GM_4gmgsmt</a>
 are good candidates as they sound fairly close to the SC-55 sound set. The
-<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#soundfonts">list of recommended
-SoundFonts</a>
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#soundfonts">list of recommended SoundFonts</a>
 on our wiki should also give you some further pointers on which SoundFonts
 are worth trying and where to find them.</p>
 <p>Note that while some SoundFonts, such as GeneralUser GS, give you overall good
@@ -954,16 +952,16 @@ the authors were thinking…</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Roland MT-32 is not General MIDI</p>
-<p>Do not confuse the Roland MT-32 family of MIDI sound modules with
-General MIDI modules! Music composed for the MT-32 sounds <em>utterly
-wrong</em> on a General MIDI module, and vice versa. Yes, they both have
-“MIDI” in their names, but that only refers to the communication protocol.
-The MT-32 range of devices are fully programmable synthesisers and most
-games take advantage of their sound-shaping capabilities, while the
-General MIDI modules have much more modest synthesis capabilities, but
-feature more realistic-sounding real-world instruments (the soundtrack of
-Dark Forces showcases this very well—you just can’t get such realistic
-orchestral music out of an MT-32).</p>
+<p>Do not confuse the Roland MT-32 family of MIDI sound modules with General
+MIDI modules! Music composed for the MT-32 sounds <em>utterly wrong</em> on a
+General MIDI module, and vice versa. Yes, they both have “MIDI” in their
+names, but that only refers to the communication protocol. The MT-32 range
+of devices are fully programmable synthesisers and most games take
+advantage of their sound-shaping capabilities, while the General MIDI
+modules have much more modest synthesis capabilities, but feature more
+realistic-sounding real-world instruments (the soundtrack of Dark Forces
+showcases this very well—you just can’t get such realistic orchestral
+music out of an MT-32).</p>
 <p>Whenever you want to configure a new game for MIDI sound, you should
 consult the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">list of MT-32-compatible computer games</a>
 to see if the game was originally composed for the MT-32 or a General MIDI
@@ -1044,11 +1042,11 @@ to 50% to make sure the compressor is never engaged:</p>
 <a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="na">exit</span>
 </code></pre></div>
 <h2 id="reverse-stereo">Reverse stereo<a class="headerlink" href="#reverse-stereo" title="Permanent link">¶</a></h2>
-<p>The sound setup utility asks us to confirm whether the left and right audio channels
-should be swapped when setting up digital audio. Weird as it may sound, some
-Sound Blaster models and clones had “reversed stereo” for some inexplicable
-reason. If people used any of these cards during the development of a game,
-the stereo image would be reversed on normal cards, and vice versa.</p>
+<p>The sound setup utility asks us to confirm whether the left and right audio
+channels should be swapped when setting up digital audio. Weird as it may
+sound, some Sound Blaster models and clones had “reversed stereo” for some
+inexplicable reason. If people used any of these cards during the development
+of a game, the stereo image would be reversed on normal cards, and vice versa.</p>
 <p>Irrespective of the exact reasons, the fact is that some games with stereo
 digital audio support have the left and right channels reversed. In affected
 games, the channels might be reversed on all Sound Blaster variants, or only
